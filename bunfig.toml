@@ -1,0 +1,13 @@
+[install]
+# npmmirror is used as the default registry for install speed.
+#
+# Do NOT set `cache = false` here: it makes `bun install` fail on Windows with
+# `EPERM ... moving "next" to cache dir failed`, which silently leaves the
+# project with no node_modules at all.
+#
+# Known limitation: this mirror lags on @supabase releases and does not carry the
+# @supabase/cli-* platform binaries, so the `supabase` npm CLI cannot run when
+# installed through it. CI does not depend on that package — it installs the CLI
+# via supabase/setup-cli, which downloads from GitHub releases. Locally, install
+# the Supabase CLI separately (scoop/brew/winget) rather than via this registry.
+registry = "https://registry.npmmirror.com"

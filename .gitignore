@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+
+# Environment files (except .env.example)
+.env
+.env*.local
+.env.development
+.env.test
+.env.production
+
+# Testing & Coverage
+test-results/
+playwright-report/
+coverage/
+.vitest/
+
+# Supabase
+supabase/.branches
+supabase/.temp
+
+# Build artefacts
+*.tsbuildinfo
+
+# Third-party agent tooling, vendored via its own git clone. Not Sana source,
+# and it was previously staged as a submodule gitlink with no .gitmodules, which
+# clones as an empty unrecoverable directory.
+.agents/
+
+# IDE & OS
+.DS_Store
+*.pem
+*.log
+
+# Next.js generated types
+next-env.d.ts

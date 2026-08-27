@@ -1,0 +1,120 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  typecheck:
+    name: 1. Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bun run typecheck
+
+  lint:
+    name: 2. Biome Lint
+    needs: typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+
+  rulepack-lint:
+    name: 3. Rulepack Lint
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bun run lint:rulepack
+
+  # The unit job stands up a real Postgres because the RLS isolation proof
+  # (PRD §6.2) is only meaningful against live policies. tests/unit/rls.test.ts
+  # hard-fails in CI if no database is reachable, rather than silently skipping.
+  unit:
+    name: 4. Unit Tests
+    needs: rulepack-lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Start Supabase and apply migrations
+        run: |
+          supabase start
+          supabase db reset
+      - name: Export Supabase credentials
+        run: |
+          {
+            echo "SUPABASE_URL=$(supabase status -o json | jq -r .API_URL)"
+            echo "SUPABASE_ANON_KEY=$(supabase status -o json | jq -r .ANON_KEY)"
+            echo "SUPABASE_SERVICE_ROLE_KEY=$(supabase status -o json | jq -r .SERVICE_ROLE_KEY)"
+          } >> "$GITHUB_ENV"
+      - run: bun install --frozen-lockfile
+      - run: bun run test:unit
+
+  # CRITICAL: Safety suite is a MANDATORY RELEASE GATE.
+  # This job must NEVER be made optional or allowed to fail.
+  # Any safety failure blocks CI and halts deployment immediately.
+  safety:
+    name: 5. Safety Suite (RELEASE GATE)
+    needs: unit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bun run test:safety
+
+  build:
+    name: 6. Next.js Build
+    needs: safety
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: anon-key-placeholder
+      SUPABASE_SERVICE_ROLE_KEY: service-role-key-placeholder
+
+  e2e:
+    name: 7. Playwright E2E Tests
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bunx playwright install --with-deps
+      - run: bun run test:e2e
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: anon-key-placeholder
+      SUPABASE_SERVICE_ROLE_KEY: service-role-key-placeholder

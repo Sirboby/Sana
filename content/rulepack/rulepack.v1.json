@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "checksum": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "locale": "en-NG",
+  "reviewStatus": "draft",
+  "symptoms": [
+    {
+      "code": "SYM_FEVER",
+      "label": "Fever",
+      "bodySystem": "general",
+      "questions": []
+    }
+  ],
+  "urgencyRules": [
+    {
+      "id": "UR_001",
+      "when": { "all": ["SYM_FEVER"] },
+      "band": "SEE_DOCTOR_TODAY",
+      "guidance": "A fever lasting more than three days should be assessed by a healthcare professional.",
+      "source": "WHO Clinical Guidelines"
+    }
+  ],
+  "alertCopy": {
+    "DUPLICATE_INGREDIENT": {
+      "title": "Two medicines contain the same ingredient",
+      "body": "Both products contain the same active ingredient."
+    }
+  },
+  "disclaimerVersion": "1.0.0"
+}

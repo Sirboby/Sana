@@ -1,0 +1,61 @@
+# Local Supabase configuration (PRD §10.1).
+#
+# Written by hand rather than by `supabase init`, because the npm-distributed CLI
+# could not be installed from the configured registry mirror. If you regenerate
+# this with `supabase init`, keep the [db.seed] block below — the default seed
+# path is ./seed.sql, but this project keeps its fixture at ./seed/seed.sql.
+project_id = "sana"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[db.seed]
+enabled = true
+# The isolation fixture: two test users, one person each, three drug_catalog
+# rows. Exists to prove RLS isolation, not to seed real data (step 6 does that).
+sql_paths = ["./seed/seed.sql"]
+
+[studio]
+enabled = true
+port = 54323
+
+[inbucket]
+enabled = true
+port = 54324
+
+[storage]
+enabled = true
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:3000"
+additional_redirect_urls = ["http://127.0.0.1:3000"]
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+refresh_token_reuse_interval = 10
+enable_signup = true
+enable_anonymous_sign_ins = false
+
+# Email sign-in exists only so tests/unit/rls.test.ts can authenticate the two
+# seeded fixture users. Production auth is phone OTP (PRD §4 F1); that arrives
+# in step 5.
+[auth.email]
+enable_signup = true
+double_confirm_changes = false
+enable_confirmations = false
+
+[auth.sms]
+enable_signup = true
+enable_confirmations = false
+
+[analytics]
+enabled = false

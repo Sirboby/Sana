@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sana-navy: #2f4156;
+  --color-sana-steel: #567c8d;
+  --color-sana-mist: #c8d9e6;
+  --color-sana-cream: #f5efeb;
+  --color-sana-white: #ffffff;
+}
+
+:root {
+  --background: #f5efeb;
+  --foreground: #2f4156;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+}
