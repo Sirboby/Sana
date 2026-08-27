@@ -358,6 +358,44 @@ describe.skipIf(!LIVE)(
       expect(error?.code).toBe('42501');
     });
 
+    it('(g2) User A INSERTs into facilities -> rejected (reference data, no write policy)', async () => {
+      // A user-writable facilities table would let anyone plant an unverified
+      // destination on the escalation screen (§5.5, §6.3). It is reference data:
+      // readable by authenticated users, writable by none of them.
+      const { error } = await clientA.from('facilities').insert({
+        id: 'f9999999-9999-4999-a999-999999999999',
+        facility_type: 'hospital',
+        name: 'Fabricated Emergency Hospital',
+        address: '9 Nowhere Street',
+        state: 'Lagos',
+        lga: 'Ikeja',
+        latitude: 6.5,
+        longitude: 3.3,
+        has_emergency: true,
+        verified_at: '2026-01-15',
+        verified_by: 'nobody',
+        source: 'fabricated',
+      });
+
+      expect(error).not.toBeNull();
+      expect(error?.code).toBe('42501');
+
+      const { data: leaked } = await admin
+        .from('facilities')
+        .select('id')
+        .eq('id', 'f9999999-9999-4999-a999-999999999999');
+      expect(leaked).toEqual([]);
+    });
+
+    it('(g3) User A SELECTs from facilities -> rows returned', async () => {
+      const { data, error } = await clientA
+        .from('facilities')
+        .select('id, name, has_emergency');
+
+      expect(error).toBeNull();
+      expect(data?.length ?? 0).toBeGreaterThanOrEqual(2);
+    });
+
     it('(h) User A SELECTs from drug_catalog -> rows returned', async () => {
       const { data, error } = await clientA
         .from('drug_catalog')

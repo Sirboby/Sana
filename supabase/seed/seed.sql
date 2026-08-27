@@ -6,10 +6,11 @@ values
   ('bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'userb@example.com', crypt('password123', gen_salt('bf')), now(), null, now(), '{"provider":"email","providers":["email"]}', '{}', false, now(), now(), '+2348022222222', now(), '', '', '', '', '', 0, null, '', null, false, null)
 on conflict (id) do nothing;
 
-insert into profiles (id, phone, display_name)
+-- Email is the login identifier since PRD v1.3; phone is recovery only.
+insert into profiles (id, email, phone, phone_verified_at, display_name)
 values
-  ('aaaaaaaa-aaaa-4aaa-baaa-aaaaaaaaaaaa', '+2348011111111', 'Test User A'),
-  ('bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb', '+2348022222222', 'Test User B')
+  ('aaaaaaaa-aaaa-4aaa-baaa-aaaaaaaaaaaa', 'usera@example.com', '+2348011111111', now(), 'Test User A'),
+  ('bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb', 'userb@example.com', null, null, 'Test User B')
 on conflict (id) do nothing;
 
 insert into persons (id, owner_id, display_name, relationship, sex_at_birth)
@@ -23,4 +24,27 @@ values
   ('d1111111-1111-4111-a111-111111111111', 'Paracetamol', array['Panadol', 'Emzor Paracetamol'], '[{"code":"PAR01","name":"Paracetamol","strength":"500","unit":"mg"}]'::jsonb, array['Analgesics', 'Antipyretics'], true),
   ('d2222222-2222-4222-a222-222222222222', 'Amoxicillin', array['Amoxil'], '[{"code":"AMX01","name":"Amoxicillin","strength":"500","unit":"mg"}]'::jsonb, array['Penicillins', 'Beta-lactam Antibiotics'], false),
   ('d3333333-3333-4333-a333-333333333333', 'Ibuprofen', array['Nurofen', 'Advuk'], '[{"code":"IBU01","name":"Ibuprofen","strength":"400","unit":"mg"}]'::jsonb, array['NSAIDs'], true)
+on conflict (id) do nothing;
+
+-- Facility fixtures for later steps. DELIBERATELY FICTIONAL: these names,
+-- addresses and numbers do not correspond to real places. A seeded facility that
+-- looked real could send someone in crisis to a wrong address or make them dial
+-- a stranger. The curated, human-verified dataset arrives in step 6.
+-- verified_at is NOT NULL by design (§6.3) — an unverified facility on the
+-- escalation screen is a safety defect, not a data-quality one.
+insert into facilities (
+  id, facility_type, name, address, state, lga, latitude, longitude,
+  phone_numbers, has_emergency, is_24_hours, verified_at, verified_by, source
+)
+values
+  ('f1111111-1111-4111-a111-111111111111', 'hospital',
+   'Test Emergency Hospital (FIXTURE — NOT A REAL FACILITY)',
+   '1 Test Road, Fixture District', 'Lagos', 'Ikeja',
+   6.605874, 3.349149, array['+2348000000001'], true, true,
+   date '2026-01-15', 'seed-fixture', 'test-fixture'),
+  ('f2222222-2222-4222-a222-222222222222', 'pharmacy',
+   'Test Pharmacy (FIXTURE — NOT A REAL FACILITY)',
+   '2 Test Road, Fixture District', 'Lagos', 'Ikeja',
+   6.601838, 3.351806, array['+2348000000002'], false, false,
+   date '2026-01-15', 'seed-fixture', 'test-fixture')
 on conflict (id) do nothing;

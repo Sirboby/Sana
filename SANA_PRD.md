@@ -1,10 +1,11 @@
 # Sana — Product Requirements Document
 
-**Version:** 1.2
+**Version:** 1.3
 **Status:** Locked for build
 **Target:** v1 private beta, ~2 week solo build
 **Changed in 1.1:** Facility directory (F9) added to v1 as a data-only directory — no maps, no tiles. Driven by a gap in the emergency path: §2.3 raised the alarm without answering "where do I go?"
 **Changed in 1.2:** Three-tier facility model. An OpenStreetMap discovery fallback covers areas outside the curated dataset, clearly labelled as unverified and structurally barred from the escalation screen.
+**Changed in 1.3:** Authentication moves from phone-primary to email-primary (§4 US-1.1, §6.1 `profiles`). Phone becomes an optional recovery channel, never a login method.
 **Audience:** AI coding agents (Claude Code, Antigravity) + the solo engineer
 
 ---
@@ -160,12 +161,18 @@ Every triage result and every safety alert persists the `rulepack_version` and `
 
 ### F1 — Account & profile
 
-**US-1.1** — *As a new user, I want to sign up with my phone number, so I don't need an email address.*
+**US-1.1** — *As a new user, I want to sign up with my email address, so I can recover my account without depending on keeping one SIM.*
 
-- **AC-1.1.1** `[E2E]` Given I am on `/signup`, When I enter a valid Nigerian phone number (`+234` or `0` prefixed, 11 digits normalised to E.164), Then I receive an OTP and am shown the code entry screen.
-- **AC-1.1.2** `[E2E]` Given I entered a valid OTP, When it is verified, Then a `profiles` row is created, and I am routed to the consent screen.
-- **AC-1.1.3** `[UNIT]` Given an invalid phone format, When I submit, Then a field-level error appears and no network request is made.
+- **AC-1.1.1** `[E2E]` Given I am on `/signup`, When I enter a valid email address, Then I receive a one-time code and am shown the code entry screen.
+- **AC-1.1.2** `[E2E]` Given I entered a valid code, When it is verified, Then a `profiles` row is created with that email, and I am routed to the consent screen.
+- **AC-1.1.3** `[UNIT]` Given an invalid email format, When I submit, Then a field-level error appears and no network request is made.
 - **AC-1.1.4** `[E2E]` Given I am offline, When I open `/signup`, Then I see an explicit "You need a connection to create an account" state — not a generic failure.
+
+**US-1.4** — *As a user, I want to add my phone number as a recovery channel, so I have a second route back into my account.*
+
+- **AC-1.4.1** `[UNIT]` Given an invalid Nigerian phone format, When I submit it as a recovery number, Then a field-level error appears and no network request is made.
+- **AC-1.4.2** `[UNIT]` Given a valid Nigerian phone number (`+234`, `234` or `0` prefixed, 11 digits), When it is saved, Then it is normalised to E.164 before storage.
+- **AC-1.4.3** `[SAFETY]` Given a profile with a phone number, When authentication is attempted, Then the phone number is never accepted as a login identifier — email is the only login method.
 
 **US-1.2** — *As a new user, I must accept the safety disclaimer before using the app.*
 
@@ -420,12 +427,17 @@ create type facility_type  as enum (
 );
 
 -- ─────────────── ACCOUNTS ───────────────
+-- Email-primary since v1.3. `phone` is an optional recovery channel and is
+-- never a login method; it keeps its unique constraint, which still holds
+-- because Postgres permits multiple NULLs.
 create table profiles (
-  id            uuid primary key references auth.users(id) on delete cascade,
-  phone         text unique not null,
-  display_name  text not null,
-  created_at    timestamptz not null default now(),
-  updated_at    timestamptz not null default now()
+  id                uuid primary key references auth.users(id) on delete cascade,
+  email             text unique not null,
+  phone             text unique,
+  phone_verified_at timestamptz,
+  display_name      text not null,
+  created_at        timestamptz not null default now(),
+  updated_at        timestamptz not null default now()
 );
 
 -- A person whose health is tracked. Every account has one 'self' person.
