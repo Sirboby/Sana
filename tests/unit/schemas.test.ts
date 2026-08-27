@@ -491,8 +491,12 @@ async function readPgEnums(): Promise<Map<string, string[]> | null> {
     return null;
   }
   try {
+    // `enumlabel` is of type `name`, so `array_agg(e.enumlabel)` yields name[]
+    // (oid 1003) — a type node-postgres has no parser for, so it hands back the
+    // raw literal '{a,b,c}' as a string instead of an array. Casting to text
+    // makes it text[] (oid 1009), which is parsed into a real JS array.
     const { rows } = await client.query<{ typname: string; values: string[] }>(
-      `select t.typname, array_agg(e.enumlabel order by e.enumsortorder) as values
+      `select t.typname, array_agg(e.enumlabel::text order by e.enumsortorder) as values
          from pg_type t
          join pg_enum e on e.enumtypid = t.oid
          join pg_namespace n on n.oid = t.typnamespace

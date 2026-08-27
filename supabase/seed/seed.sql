@@ -13,12 +13,38 @@
 -- `extensions`. Naming both keeps this file portable across the two.
 set search_path = public, extensions;
 
--- Test Users A and B
-insert into auth.users (id, instance_id, aud, role, email, encrypted_password, email_confirmed_at, recovery_sent_at, last_sign_in_at, raw_app_meta_data, raw_user_meta_data, is_super_admin, created_at, updated_at, phone, phone_confirmed_at, phone_change, phone_change_token, email_change, email_change_token_new, email_change_token_current, email_change_confirm_status, banned_until, reauthentication_token, reauthentication_sent_at, is_sso_user, deleted_at)
+-- Test Users A and B.
+--
+-- NOTE ON THE TOKEN COLUMNS: GoTrue scans confirmation_token, recovery_token and
+-- their siblings into NON-NULLABLE Go strings. auth.users leaves them nullable,
+-- so a hand-inserted row that omits any of them makes every subsequent auth
+-- query fail with the opaque error "Database error querying schema" — including
+-- sign-in, and for all users, not just the malformed one. They must be '', never
+-- NULL. This is the price of inserting into auth.users directly; the alternative
+-- is the Auth admin API, which cannot assign the fixed UUIDs the RLS test needs.
+insert into auth.users (id, instance_id, aud, role, email, encrypted_password, email_confirmed_at, recovery_sent_at, last_sign_in_at, raw_app_meta_data, raw_user_meta_data, is_super_admin, created_at, updated_at, phone, phone_confirmed_at, confirmation_token, recovery_token, phone_change, phone_change_token, email_change, email_change_token_new, email_change_token_current, email_change_confirm_status, banned_until, reauthentication_token, reauthentication_sent_at, is_sso_user, deleted_at)
 values
-  ('aaaaaaaa-aaaa-4aaa-baaa-aaaaaaaaaaaa', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'usera@example.com', crypt('password123', gen_salt('bf')), now(), null, now(), '{"provider":"email","providers":["email"]}', '{}', false, now(), now(), '+2348011111111', now(), '', '', '', '', '', 0, null, '', null, false, null),
-  ('bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'userb@example.com', crypt('password123', gen_salt('bf')), now(), null, now(), '{"provider":"email","providers":["email"]}', '{}', false, now(), now(), '+2348022222222', now(), '', '', '', '', '', 0, null, '', null, false, null)
+  ('aaaaaaaa-aaaa-4aaa-baaa-aaaaaaaaaaaa', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'usera@example.com', crypt('password123', gen_salt('bf')), now(), null, now(), '{"provider":"email","providers":["email"]}', '{}', false, now(), now(), '+2348011111111', now(), '', '', '', '', '', '', '', 0, null, '', null, false, null),
+  ('bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'userb@example.com', crypt('password123', gen_salt('bf')), now(), null, now(), '{"provider":"email","providers":["email"]}', '{}', false, now(), now(), '+2348022222222', now(), '', '', '', '', '', '', '', 0, null, '', null, false, null)
 on conflict (id) do nothing;
+
+-- Repair databases seeded before the token columns were included above. The
+-- INSERT uses `on conflict do nothing`, so it will not correct rows that already
+-- exist with NULLs in place. Scoped to the two fixture users by id so it can
+-- never touch a real account.
+update auth.users
+   set confirmation_token         = coalesce(confirmation_token, ''),
+       recovery_token             = coalesce(recovery_token, ''),
+       email_change               = coalesce(email_change, ''),
+       email_change_token_new     = coalesce(email_change_token_new, ''),
+       email_change_token_current = coalesce(email_change_token_current, ''),
+       phone_change               = coalesce(phone_change, ''),
+       phone_change_token         = coalesce(phone_change_token, ''),
+       reauthentication_token     = coalesce(reauthentication_token, '')
+ where id in (
+   'aaaaaaaa-aaaa-4aaa-baaa-aaaaaaaaaaaa',
+   'bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb'
+ );
 
 -- Email is the login identifier since PRD v1.3; phone is recovery only.
 insert into profiles (id, email, phone, phone_verified_at, display_name)

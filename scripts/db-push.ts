@@ -96,7 +96,35 @@ async function main(): Promise<void> {
     `Mode:   ${DRY_RUN ? 'dry run' : 'apply'}${WITH_SEED ? ' + seed' : ''}\n`,
   );
 
-  await client.connect();
+  try {
+    await client.connect();
+  } catch (error) {
+    const message = (error as Error).message;
+    // db.<ref>.supabase.co resolves to an AAAA record only. Supabase stopped
+    // handing out IPv4 for direct connections, so on an IPv4-only network the
+    // lookup fails outright. The Supavisor pooler does publish IPv4.
+    if (
+      /ENOTFOUND|EAI_AGAIN/.test(message) &&
+      /^db\./.test(new URL(connectionString).hostname)
+    ) {
+      throw new Error(
+        `Cannot resolve ${new URL(connectionString).hostname}.
+
+Supabase direct connections (db.<ref>.supabase.co) are IPv6-only, and this
+network is IPv4. Use the Session pooler connection string instead:
+
+  Dashboard -> Project Settings -> Database -> Connection string -> Session pooler
+
+It looks like:
+  postgresql://postgres.<project-ref>:<password>@aws-0-<region>.pooler.supabase.com:5432/postgres
+
+Note the username becomes postgres.<project-ref>, not postgres. Use the SESSION
+pooler on port 5432, not the transaction pooler on 6543 — migrations run DDL in
+explicit multi-statement transactions, which transaction mode does not support.`,
+      );
+    }
+    throw error;
+  }
 
   try {
     await client.query(`
@@ -106,6 +134,17 @@ async function main(): Promise<void> {
         applied_at  timestamptz not null default now()
       )
     `);
+
+    // This ledger lives in `public`, which PostgREST exposes, so without RLS any
+    // authenticated user could read it. Enable RLS and grant no policy at all:
+    // the effect is deny-by-default for every client role, while the service role
+    // and this script's direct connection bypass RLS and still work. It also
+    // keeps the project's invariant intact — every table in `public` reports
+    // rowsecurity = true.
+    await client.query('alter table sana_migrations enable row level security');
+    await client.query(
+      'revoke all on sana_migrations from anon, authenticated',
+    );
 
     const { rows: applied } = await client.query<{
       version: string;
