@@ -167,12 +167,23 @@ Every triage result and every safety alert persists the `rulepack_version` and `
 - **AC-1.1.2** `[E2E]` Given I entered a valid code, When it is verified, Then a `profiles` row is created with that email, and I am routed to the consent screen.
 - **AC-1.1.3** `[UNIT]` Given an invalid email format, When I submit, Then a field-level error appears and no network request is made.
 - **AC-1.1.4** `[E2E]` Given I am offline, When I open `/signup`, Then I see an explicit "You need a connection to create an account" state — not a generic failure.
+- **AC-1.1.5** `[UNIT]` Given three code requests for one address inside 15 minutes, When a fourth is made, Then it is rejected **server-side**, not merely disabled in the UI.
+- **AC-1.1.6** `[UNIT]` Given an expired code and given an already-used code, When each is submitted, Then each fails with a distinct, actionable message — never one generic "invalid code".
+- **AC-1.1.7** `[UNIT]` Given an existing user, When they sign in again, Then no duplicate `profiles` or `persons` row is created. Signup and sign-in are one flow.
+
+> **Codes, never magic links.** A magic link opens in the mail client's in-app webview or the system default browser — neither of which is the installed PWA. The session is established in the wrong browsing context and the user returns to the app still apparently signed out. On Android and iOS that is the normal path for an installed PWA, not an edge case. A 6-digit code keeps the whole flow inside the app.
 
 **US-1.4** — *As a user, I want to add my phone number as a recovery channel, so I have a second route back into my account.*
 
-- **AC-1.4.1** `[UNIT]` Given an invalid Nigerian phone format, When I submit it as a recovery number, Then a field-level error appears and no network request is made.
-- **AC-1.4.2** `[UNIT]` Given a valid Nigerian phone number (`+234`, `234` or `0` prefixed, 11 digits), When it is saved, Then it is normalised to E.164 before storage.
-- **AC-1.4.3** `[SAFETY]` Given a profile with a phone number, When authentication is attempted, Then the phone number is never accepted as a login identifier — email is the only login method.
+Entirely optional. Prompt once, never nag. Skipping it degrades nothing, and signup must never depend on SMS being configured.
+
+- **AC-1.4.1** `[UNIT]` Given a phone number added in settings, When the SMS code is verified, Then `phone_verified_at` is set. An invalid format produces a field error with no network request, and the number is normalised to E.164 before storage.
+- **AC-1.4.2** `[UNIT]` Given an UNVERIFIED phone number, When it is used to attempt recovery, Then the attempt is rejected — an unverified number is not a recovery channel.
+- **AC-1.4.3** `[UNIT]` Given a phone number already verified on another account, When it is added, Then it is rejected. `profiles.phone` is unique.
+- **AC-1.4.4** `[E2E]` Given a verified recovery phone, When I authenticate via SMS OTP at `/recover`, Then I can change the account email.
+- **AC-1.4.5** `[SAFETY]` Given a recovery-driven email change, When it completes, Then BOTH the old and new addresses are notified and an `audit_log` row is written. This flow is an account-takeover path into a health record and must always leave a trace the original owner can see.
+- **AC-1.4.6** `[E2E]` Given I skip adding a recovery phone, When I continue using the app, Then nothing is degraded and I am not prompted again.
+- **AC-1.4.7** `[SAFETY]` Given a profile with a phone number, When authentication is attempted, Then the phone number is never accepted as a login identifier — email is the only login method.
 
 **US-1.2** — *As a new user, I must accept the safety disclaimer before using the app.*
 
@@ -919,8 +930,10 @@ A signed, versioned JSON document containing all non-red-flag clinical content. 
 ```
 /                       public   landing (APCON-compliant copy)
 /privacy  /terms        public   NDPA-required notices
-/signup  /login         public   phone OTP
+/signup  /login         public   email 6-digit code (never a magic link)
+/recover                public   SMS OTP to a verified recovery phone
 /consent                auth     blocking safety disclaimer
+/unlock                 auth     PIN setup / unlock for the local store
 /app                    auth     today view — due doses, quick actions
 /app/meds               auth     regimen list
 /app/meds/new           auth     add flow, screening gate before save
