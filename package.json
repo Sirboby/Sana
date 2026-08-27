@@ -15,7 +15,10 @@
     "test:safety": "vitest run --config vitest.safety.config.ts",
     "test:e2e": "playwright test",
     "test:all": "npm run typecheck && npm run lint && npm run lint:rulepack && npm run test:unit && npm run test:safety",
-    "db:reset": "supabase db reset"
+    "db:reset": "supabase db reset",
+    "db:push": "bun scripts/db-push.ts",
+    "db:push:seed": "bun scripts/db-push.ts --seed",
+    "db:push:dry": "bun scripts/db-push.ts --dry-run"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.48.1",

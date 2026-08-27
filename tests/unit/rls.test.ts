@@ -139,7 +139,32 @@ async function databaseIsReachable(): Promise<boolean> {
   }
 }
 
-const LIVE = await databaseIsReachable();
+/**
+ * This suite is DESTRUCTIVE: it deletes and re-inserts fixture rows using the
+ * service-role key, which bypasses RLS entirely.
+ *
+ * Against local Supabase that is harmless. Against a hosted project it is not —
+ * one wrong URL in .env.local and this deletes rows from a database holding real
+ * people's medication history. A hosted target therefore has to be opted into
+ * explicitly rather than reached by default.
+ *
+ * The check runs only once a database has actually answered: an unreachable
+ * host cannot be damaged, and failing on one would make the ordinary
+ * no-database run impossible.
+ */
+const IS_LOCAL_TARGET =
+  /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:|\/|$)/.test(SUPABASE_URL);
+const REMOTE_ALLOWED = process.env.SANA_ALLOW_REMOTE_TEST_DB === '1';
+
+const REACHABLE = await databaseIsReachable();
+
+if (REACHABLE && !IS_LOCAL_TARGET && !REMOTE_ALLOWED) {
+  throw new Error(
+    `Refusing to run destructive RLS tests against a non-local database (${SUPABASE_URL}). This suite deletes rows with the service-role key. If this really is a disposable dev project and not one holding real users, set SANA_ALLOW_REMOTE_TEST_DB=1 in .env.local to confirm.`,
+  );
+}
+
+const LIVE = REACHABLE;
 const LIVE_REQUIRED =
   process.env.CI === 'true' || process.env.SANA_RLS_LIVE === '1';
 

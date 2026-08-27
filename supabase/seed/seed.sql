@@ -1,4 +1,18 @@
 -- supabase/seed/seed.sql
+--
+-- Fixture data. Exists to prove RLS isolation, not to seed real data — the real
+-- catalog arrives in step 6.
+--
+-- DESTRUCTIVE-TEST TARGET: tests/unit/rls.test.ts deletes and re-inserts rows
+-- keyed to these fixtures on every run. Never apply this to a database holding
+-- real users.
+--
+-- `crypt()` and `gen_salt()` come from pgcrypto, which sits in different schemas
+-- depending on where this runs: local Supabase creates it in `public` via
+-- 001_extensions.sql, while hosted Supabase ships it pre-installed in
+-- `extensions`. Naming both keeps this file portable across the two.
+set search_path = public, extensions;
+
 -- Test Users A and B
 insert into auth.users (id, instance_id, aud, role, email, encrypted_password, email_confirmed_at, recovery_sent_at, last_sign_in_at, raw_app_meta_data, raw_user_meta_data, is_super_admin, created_at, updated_at, phone, phone_confirmed_at, phone_change, phone_change_token, email_change, email_change_token_new, email_change_token_current, email_change_confirm_status, banned_until, reauthentication_token, reauthentication_sent_at, is_sso_user, deleted_at)
 values
