@@ -125,14 +125,23 @@ test.describe('flows that need no mail', () => {
     page,
     context,
   }) => {
-    await context.setOffline(true);
+    // Load the page FIRST, then drop the connection. Going offline before the
+    // navigation would fail the navigation itself — the browser could not fetch
+    // the page at all, so there would be nothing rendered to assert against, and
+    // the test would be checking Playwright rather than the app.
     await page.goto('/signup');
+    await expect(page.getByLabel('Email address')).toBeVisible();
+
+    await context.setOffline(true);
+    // The form listens for the browser's own offline event, so no reload needed.
 
     const notice = page.getByTestId('offline-notice');
     await expect(notice).toBeVisible();
     // Explicit, not a generic failure.
     await expect(notice).toContainText('need a connection');
+
     await context.setOffline(false);
+    await expect(page.getByLabel('Email address')).toBeVisible();
   });
 
   test('(k) consent continue is disabled until the box is checked (AC-1.2.2)', async ({

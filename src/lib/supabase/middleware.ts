@@ -1,6 +1,8 @@
 import { createServerClient } from '@supabase/ssr';
 import { type NextRequest, NextResponse } from 'next/server';
 import { currentDisclaimerVersion, hasCurrentConsent } from '../auth/consent';
+import { hasConsentMarker } from '../auth/consent-marker';
+import { decideRoute, isPublicRoute } from '../auth/route-decision';
 import { classifyAuthFailure } from '../auth/session';
 import { env } from '../env';
 
@@ -20,20 +22,6 @@ import { env } from '../env';
  * both a lie (the server cannot know whether the in-memory key was cleared) and
  * a leak. The client gate in ./route-guard enforces that stage instead.
  */
-
-const PUBLIC_ROUTES = new Set([
-  '/',
-  '/login',
-  '/signup',
-  '/recover',
-  '/privacy',
-  '/terms',
-]);
-
-function isPublic(pathname: string): boolean {
-  if (PUBLIC_ROUTES.has(pathname)) return true;
-  return pathname.startsWith('/auth/') || pathname.startsWith('/api/auth/');
-}
 
 export async function updateSession(
   request: NextRequest,
@@ -60,8 +48,15 @@ export async function updateSession(
       },
     },
   );
-
   const pathname = request.nextUrl.pathname;
+
+  /**
+   * @supabase/ssr names session cookies `sb-<project-ref>-auth-token`, chunked
+   * with a `.0`/`.1` suffix when the value is large.
+   */
+  const hasSessionCookie = request.cookies
+    .getAll()
+    .some((cookie) => /^sb-.*-auth-token(\.\d+)?$/.test(cookie.name));
 
   let userId: string | null = null;
   let authFailure: unknown = null;
@@ -74,47 +69,39 @@ export async function updateSession(
     authFailure = error;
   }
 
-  // OFFLINE TOLERANCE. If the auth server could not be reached we do NOT treat
-  // the user as signed out. Redirecting to /login here would strand someone with
-  // no connection on a page that requires one — see ../auth/session.ts for why
-  // the asymmetry favours retaining the session. Let the request through and let
-  // the client, which has the cached session and the local data, carry on.
-  if (
+  const unreachable =
     authFailure !== null &&
-    classifyAuthFailure(authFailure) !== 'unauthenticated'
-  ) {
-    return response;
-  }
+    classifyAuthFailure(authFailure) !== 'unauthenticated';
 
-  if (isPublic(pathname)) {
-    return response;
-  }
+  const version = currentDisclaimerVersion();
 
-  if (userId === null) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/login';
-    // Preserve where they were headed so sign-in can return them there.
-    url.searchParams.set('next', pathname);
-    return NextResponse.redirect(url);
-  }
+  // The consents lookup is only attempted when it can actually succeed and is
+  // actually needed — it is a database round trip on every authenticated request.
+  const needsConsentCheck =
+    !unreachable &&
+    userId !== null &&
+    !isPublicRoute(pathname) &&
+    pathname !== '/consent' &&
+    pathname !== '/unlock';
 
-  // /consent and /unlock are themselves authenticated routes, so exempt them
-  // from the checks they exist to satisfy — otherwise they redirect to
-  // themselves forever.
-  if (pathname === '/consent' || pathname === '/unlock') {
-    return response;
-  }
+  const consented =
+    needsConsentCheck && userId !== null
+      ? await hasCurrentConsent(supabase, userId, version)
+      : null;
 
-  const consented = await hasCurrentConsent(
-    supabase,
+  const decision = decideRoute({
+    pathname,
+    hasSessionCookie,
+    unreachable,
     userId,
-    currentDisclaimerVersion(),
-  );
-  if (!consented) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/consent';
-    return NextResponse.redirect(url);
-  }
+    hasConsentMarker: hasConsentMarker(request, version),
+    consented,
+  });
 
-  return response;
+  if (decision.action === 'allow') return response;
+
+  const url = request.nextUrl.clone();
+  url.pathname = decision.to;
+  if (decision.to === '/login') url.searchParams.set('next', pathname);
+  return NextResponse.redirect(url);
 }

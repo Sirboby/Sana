@@ -1,8 +1,6 @@
 'use client';
 
-import { CONSENT_TYPE, currentDisclaimerVersion } from '@/lib/auth/consent';
-import { newId } from '@/lib/schemas';
-import { createClient } from '@/lib/supabase/client';
+import { currentDisclaimerVersion } from '@/lib/auth/consent';
 import { useState } from 'react';
 
 /**
@@ -26,30 +24,22 @@ export default function ConsentPage() {
     setBusy(true);
     setError(null);
     try {
-      const supabase = createClient();
-      const { data, error: userError } = await supabase.auth.getUser();
-      if (userError || !data.user) {
-        setError('Your session expired. Sign in again.');
-        return;
-      }
-
-      // AC-1.2.3: a consents row with the type, the current version, and
-      // granted_at. owner_id is set by RLS's WITH CHECK against auth.uid().
-      const { error: insertError } = await supabase.from('consents').insert({
-        id: newId(),
-        owner_id: data.user.id,
-        consent_type: CONSENT_TYPE,
-        version,
-        granted_at: new Date().toISOString(),
-      });
-
-      if (insertError) {
+      // Written through a route handler, not directly from here, so the offline
+      // marker cookie can be httpOnly and is only set once the row has landed.
+      const response = await fetch('/api/auth/consent', { method: 'POST' });
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
         setError(
-          'Could not record your acceptance. Check your connection and try again.',
+          payload.error ??
+            'Could not record your acceptance. Check your connection and try again.',
         );
         return;
       }
       window.location.assign('/unlock');
+    } catch {
+      setError(
+        'You need a connection to accept this. Reconnect and try again.',
+      );
     } finally {
       setBusy(false);
     }

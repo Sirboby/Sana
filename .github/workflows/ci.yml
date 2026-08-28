@@ -116,6 +116,8 @@ jobs:
           bun-version: latest
       - run: bun install --frozen-lockfile
       - run: bunx playwright install --with-deps
+      # next start serves the built output, so the build must exist first.
+      - run: bun run build
       - run: bun run test:e2e
     env:
       NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co

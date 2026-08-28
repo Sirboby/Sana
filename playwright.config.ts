@@ -18,8 +18,17 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'bun run dev',
+    /**
+     * Production build in CI, dev server locally.
+     *
+     * Dev mode compiles each route on first navigation, which in CI shows up as
+     * multi-second first hits and timeouts that look like real failures. CI
+     * builds first and serves the built output — faster, and it exercises what
+     * actually ships rather than the dev bundler.
+     */
+    command: process.env.CI ? 'bun run start' : 'bun run dev',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
+    timeout: 120_000,
   },
 });
