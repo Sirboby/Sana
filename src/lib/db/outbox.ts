@@ -23,7 +23,16 @@ import { type EncryptedField, decryptField, encryptField } from './crypto';
  * no plaintext clinical data is ever at rest on the device.
  */
 
-export type OutboxStatus = 'pending' | 'in_flight' | 'failed';
+/**
+ * Outbox lifecycle.
+ *
+ * The 'dead' state was added in step 9: a mutation that has failed
+ * MAX_MUTATION_ATTEMPTS times stops retrying and is surfaced to the user
+ * instead. Retrying forever would drain the battery and data of someone who
+ * can see nothing wrong, and would hide a permanently-failing change behind an
+ * indicator that always says "syncing".
+ */
+export type OutboxStatus = 'pending' | 'in_flight' | 'failed' | 'dead';
 
 export type OutboxEntry = {
   /** Auto-incremented by Dexie; absent until the row is stored. */
