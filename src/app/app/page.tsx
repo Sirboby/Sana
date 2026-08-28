@@ -1,18 +1,16 @@
+import { SyncIndicator } from '@/components/SyncIndicator';
 import { PersonSwitcher } from '@/components/auth/PersonSwitcher';
+import { TodayDoses } from '@/components/dosing/TodayDoses';
 import { createServerSupabase } from '@/lib/supabase/server';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
 /**
- * Authenticated placeholder (step 5), proving the whole chain works:
- * code sign-in -> bootstrap -> consent -> unlock -> here.
+ * The today view (step 11).
  *
- * The brief asks this to show "the authenticated user's phone"; since v1.3 made
- * email the login identifier and phone an optional recovery channel, it shows
- * the email and the phone's recovery status instead. A phone is frequently
- * absent by design (AC-1.4.6), so rendering it as the identity would show most
- * users a blank.
- *
- * No clinical content — step 5 is explicitly not that.
+ * Leads with due doses, because that is what the app is for on an ordinary day
+ * — and because this list is TIER 2, the reminder path that works with no
+ * connection and no permissions.
  */
 export default async function AppPage() {
   const supabase = await createServerSupabase();
@@ -34,7 +32,15 @@ export default async function AppPage() {
 
   return (
     <main>
-      <h1>Signed in</h1>
+      <h1>Today</h1>
+      <SyncIndicator />
+
+      <TodayDoses />
+
+      <nav aria-label="Sections">
+        <Link href="/app/meds">Your medicines</Link>
+        <Link href="/app/settings">Settings</Link>
+      </nav>
 
       <section aria-label="Account">
         <h2>Account</h2>

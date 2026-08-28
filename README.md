@@ -69,6 +69,32 @@ Then take `SUPABASE_URL` / keys from `supabase status`. No
 CI provisions its own throwaway Supabase via Docker on the runner, so no
 credentials are stored in GitHub and concurrent runs cannot collide.
 
+## Reminders — what works, and what does not
+
+Reminders have three tiers. The third is a real gap, documented rather than
+worked around.
+
+| Tier | Condition | Works? |
+|---|---|---|
+| 1 — Web Push | Online, app closed | Yes, with permission granted. iOS needs the PWA added to the home screen first. |
+| 2 — In-app due list | Offline, app open | **Always.** No network, no permissions, no service worker. |
+| 3 — the gap | Offline AND app closed | **No. Not possible on the web.** |
+
+**Why Tier 3 cannot be built.** AC-3.2.2 originally asked for a notification
+with the app closed and no network. The only web API that could do both,
+Notification Triggers / `TimestampTrigger`, was abandoned by Chrome and never
+shipped to stable. Nothing implements it.
+
+Service-worker timers are NOT a substitute and must not be used as one: the
+worker is killed when idle and `setTimeout` does not survive that. Code built on
+it appears to work in a foregrounded dev tab and silently fails on the devices it
+was written for — which is worse than not having it, because it looks fine in
+testing.
+
+The in-app settings screen states this limit to the user in the same terms. A
+person who trusts a reminder that never fires is worse off than one who knows to
+open the app.
+
 ## Script Reference
 
 | Script | Command | Purpose |
