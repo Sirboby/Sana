@@ -1,0 +1,34 @@
+{
+  "$comment": [
+    "Emergency contact numbers for the escalation screen (PRD §2.3, §14).",
+    "",
+    "DELIBERATELY UNPOPULATED. Every value below is the placeholder",
+    "REQUIRES_HUMAN_VERIFICATION, and scripts/validate-emergency-numbers.ts fails",
+    "the build while any remain. That failure is correct behaviour, not a bug.",
+    "",
+    "WHY AN AGENT MUST NOT FILL THIS IN",
+    "This number is rendered on a screen shown to someone who may be having a",
+    "heart attack, and it is the primary action on it. A number that is wrong,",
+    "out of service, or right for one state and wrong for another is the single",
+    "most damaging defect this application can ship — the user does exactly what",
+    "the app told them and reaches nobody.",
+    "",
+    "PRD §14 lists this as an open item precisely because emergency numbers vary",
+    "by state in Nigeria and 112 coverage is uneven. It has to be confirmed by a",
+    "person who has dialled it, per state, and recorded who checked and when.",
+    "",
+    "HOW TO POPULATE",
+    "Replace each REQUIRES_HUMAN_VERIFICATION with a dialable number, then fill",
+    "in verifiedBy and verifiedAt. Add a stateOverrides entry only for states",
+    "where the national number does not reach a working dispatcher."
+  ],
+  "version": "1.0.0",
+  "national": {
+    "countryCode": "NG",
+    "primary": "REQUIRES_HUMAN_VERIFICATION",
+    "label": "REQUIRES_HUMAN_VERIFICATION",
+    "verifiedBy": "REQUIRES_HUMAN_VERIFICATION",
+    "verifiedAt": "REQUIRES_HUMAN_VERIFICATION"
+  },
+  "stateOverrides": {}
+}

@@ -28,6 +28,12 @@ export const PUBLIC_ROUTES = new Set([
 
 export function isPublicRoute(pathname: string): boolean {
   if (PUBLIC_ROUTES.has(pathname)) return true;
+  // Test harness routes for step 7's escalation screen. Reachable ONLY outside
+  // production: the page itself returns 404 in production, and this keeps the
+  // auth gate closed there even if that guard were ever removed.
+  if (process.env.NODE_ENV !== 'production' && pathname.startsWith('/dev/')) {
+    return true;
+  }
   return pathname.startsWith('/auth/') || pathname.startsWith('/api/auth/');
 }
 
