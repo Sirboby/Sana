@@ -38,3 +38,6 @@ supabase/.temp
 
 # Next.js generated types
 next-env.d.ts
+
+# ETL raw API responses — regenerable, and large
+content/reference/.cache/

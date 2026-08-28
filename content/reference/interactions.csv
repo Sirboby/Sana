@@ -1,0 +1,37 @@
+# Class-level drug interactions (PRD §6.3: "Curated class-level set, cited to
+# openFDA labels", target 50-80 pairs).
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# DELIBERATELY EMPTY. THIS IS AN ESCALATION, NOT AN OVERSIGHT.
+# ─────────────────────────────────────────────────────────────────────────────
+# PRD §0 rule 2: "An agent must never generate, infer, or 'fill in' medical
+# facts, drug interactions, dosages, or condition mappings. Missing content is a
+# blocker to escalate, not a gap to improvise."
+#
+# §5.2 and §5.3 could be transcribed because the PRD states them outright. It
+# does NOT state any interaction pair. Producing 50-80 mechanisms and
+# recommendations from model knowledge would be generating clinical content, and
+# attaching a citation like "openFDA label" to text not actually read from one
+# would be worse — a fabricated provenance is harder to catch than a missing row,
+# because it survives review.
+#
+# The risk is not abstract. §2.2 warns that a false alarm can make someone stop a
+# medicine they need. An interaction table that is 90% right is a table that
+# fires wrongly one time in ten, and the app's whole credibility rests on its
+# alerts being worth reading.
+#
+# HOW TO FILL THIS IN
+# openFDA labels carry a `drug_interactions` free-text field, which is a real,
+# quotable source:
+#   https://api.fda.gov/drug/label.json?search=openfda.generic_name:"warfarin"
+# A row is legitimate when `mechanism` and `recommendation` are taken from a
+# specific label and `source` records which one (the SPL set id), or when a
+# clinician authors and signs off the prose. Either is fine. Neither is something
+# this step could do unattended.
+#
+# The screening engine (step 8) must treat an empty interaction set as "no
+# interaction data", never as "no interactions" — those are different claims, and
+# only the first is true here.
+#
+# `class_a` and `class_b` use ids from drug-classes.json.
+class_a,class_b,severity,mechanism,recommendation,source,evidence_url

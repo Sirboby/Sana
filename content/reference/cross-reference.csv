@@ -1,0 +1,14 @@
+# Allergy cross-reactivity (PRD §5.2).
+#
+# Every row is transcribed DIRECTLY from the table in PRD §5.2, which is the
+# project's own source of truth and was authored for this purpose. Nothing here
+# is inferred, extended, or filled in: §5.2 lists exactly five rows and this file
+# contains exactly those five.
+#
+# `reactive_class` and `allergen_class` use ids from drug-classes.json.
+allergen_class,reactive_class,risk_level,note,source
+penicillins,cephalosporins,low-moderate,"Cross-reactivity between penicillins and cephalosporins is recognised and is described as low to moderate.",PRD §5.2
+penicillins,carbapenems,low,"Cross-reactivity between penicillins and carbapenems is recognised and is described as low.",PRD §5.2
+sulfonamide-antibiotics,sulfonamide-antibiotics,moderate,"Cross-reactivity between sulfonamide antibiotics is described as moderate.",PRD §5.2
+nsaids,nsaids,moderate-high,"Cross-reactivity between NSAIDs, including aspirin, is described as moderate to high.",PRD §5.2
+macrolides,macrolides,moderate,"Cross-reactivity between macrolides is described as moderate.",PRD §5.2

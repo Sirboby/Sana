@@ -1,0 +1,32 @@
+# Human-verified ingredients for products absent from RxNorm and openFDA.
+#
+# WHY THIS FILE EXISTS
+# RxNorm and openFDA index US products. Several products in common Nigerian use
+# are simply not in them — Alabukun, Ampiclox, Coldrex, Procold, P-Alaxin,
+# Fansidar and others. build-catalog.ts EXCLUDES those rather than guessing,
+# because a product with a partial or invented ingredient list looks checkable
+# and is not, which is the exact failure that hurts someone.
+#
+# This file is how they get back in: a human reads the actual pack and records
+# what is printed on it.
+#
+# RULES
+# 1. `verified_by` and `verified_at` are REQUIRED. A row without both is ignored
+#    entirely, exactly like an unverified facility.
+# 2. `ingredient_rxcui` must be the RxNorm ingredient code, so the duplicate
+#    check compares the same identity as the rest of the catalog. Look it up at
+#    https://rxnav.nlm.nih.gov/REST/rxcui.json?name=<ingredient>&search=1
+#    Paracetamol and acetaminophen are both 161 — that collapsing is the point.
+# 3. `source` should say what was read: "pack, 500mg tablet, batch X" or a
+#    manufacturer datasheet URL. Not "known" and not a person's memory.
+# 4. Record EVERY active ingredient on the pack. An incomplete row is worse than
+#    no row, because it re-introduces exactly the partial-list problem.
+#
+# DELIBERATELY EMPTY. It is filled in by someone holding the product, not by an
+# agent inferring from a name. Nigerian formulations differ from the US and UK
+# ones sharing the same brand, so the pack is the only authority.
+#
+# WORKED EXAMPLE (commented out — uncomment only after verifying against a pack):
+# Ampiclox,ampicillin,723,250,mg,Eniola,2026-09-01,"pack: Ampiclox 500mg capsule"
+# Ampiclox,cloxacillin,2625,250,mg,Eniola,2026-09-01,"pack: Ampiclox 500mg capsule"
+local_brand,ingredient_name,ingredient_rxcui,strength,unit,verified_by,verified_at,source

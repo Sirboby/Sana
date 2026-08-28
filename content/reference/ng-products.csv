@@ -1,0 +1,79 @@
+# Candidate products for the Nigerian catalog.
+#
+# THIS FILE CONTAINS NO CLINICAL CONTENT. It is a list of product NAMES believed
+# to be in common use in Nigeria, plus the lookup term the ETL should use.
+# Ingredients, ingredient codes and drug classes are NEVER written here — they
+# are resolved from RxNorm and openFDA by scripts/etl/build-catalog.ts, so that
+# every ingredient fact in the catalog carries an authoritative citation.
+#
+# A row whose ingredients cannot be resolved is written to unresolved.csv and
+# EXCLUDED from the catalog. Per the step 6 constraint: a product with unknown
+# ingredients is worse than an absent one, because it looks checkable and isn't.
+#
+# combination=yes marks a product believed to have MORE THAN ONE active ingredient.
+# If such a product resolves to fewer than two ingredients, it is EXCLUDED rather
+# than shipped with a partial list. A partial ingredient list is the worst case:
+# it looks checkable and silently misses the ingredient that would have matched.
+# The flag errs toward exclusion — wrongly flagging a single-ingredient product
+# just drops it, whereas missing a combination ships an unsafe row.
+#
+# lookup_term is what gets sent to RxNorm. Where a Nigerian brand is absent from
+# RxNorm (it indexes US products), the lookup term is the generic or the
+# international brand, and `local_brand` records the name a Nigerian user would
+# actually search for. That mapping is a MARKET fact, not a clinical one.
+#
+# Formulations differ between markets — Panadol in Lagos is not necessarily
+# Panadol in London — so a row is only trustworthy once `verified_by` is filled
+# in by a human holding the actual pack. Rows are still included when RxNorm
+# resolves them, because RxNorm is itself an authoritative source; `verified_by`
+# records the stronger, local check.
+local_brand,lookup_term,category,combination,verified_by,verified_at,notes
+Panadol,acetaminophen,analgesic,no,,,Single-ingredient paracetamol
+Panadol Extra,Panadol Extra,analgesic,yes,,,Combination - paracetamol stacking risk
+Paracetamol,acetaminophen,analgesic,no,,,Generic
+Emzor Paracetamol,acetaminophen,analgesic,no,,,Nigerian manufacturer
+Coartem,Coartem,antimalarial,yes,,,Artemether-lumefantrine
+Lonart,Coartem,antimalarial,yes,,,Nigerian brand of artemether-lumefantrine
+P-Alaxin,dihydroartemisinin,antimalarial,yes,,,Dihydroartemisinin-piperaquine
+Augmentin,Augmentin,antibiotic,yes,,,Amoxicillin-clavulanate
+Amoxil,amoxicillin,antibiotic,no,,,
+Amoxicillin,amoxicillin,antibiotic,no,,,
+Ampiclox,ampicillin,antibiotic,yes,,,Ampicillin-cloxacillin combination - see unresolved
+Ciprofloxacin,ciprofloxacin,antibiotic,no,,,
+Ciprotab,ciprofloxacin,antibiotic,no,,,Nigerian brand
+Flagyl,metronidazole,antibiotic,no,,,
+Metronidazole,metronidazole,antibiotic,no,,,
+Septrin,sulfamethoxazole and trimethoprim,antibiotic,yes,,,Co-trimoxazole - sulfonamide
+Co-trimoxazole,sulfamethoxazole and trimethoprim,antibiotic,yes,,,Sulfonamide
+Ibuprofen,ibuprofen,nsaid,no,,,
+Brufen,ibuprofen,nsaid,no,,,
+Nurofen,ibuprofen,nsaid,no,,,
+Diclofenac,diclofenac,nsaid,no,,,
+Voltaren,diclofenac,nsaid,no,,,
+Cataflam,diclofenac potassium,nsaid,no,,,
+Aspirin,aspirin,nsaid,no,,,
+Alabukun,aspirin,nsaid,yes,,,Aspirin-caffeine powder - see unresolved
+Phensic,aspirin,nsaid,yes,,,Aspirin-caffeine
+Piriton,chlorpheniramine,antihistamine,no,,,
+Chlorpheniramine,chlorpheniramine,antihistamine,no,,,
+Loratadine,loratadine,antihistamine,no,,,
+Cetirizine,cetirizine,antihistamine,no,,,
+Coldrex,Coldrex,cold-remedy,yes,,,Combination - paracetamol stacking risk
+Procold,acetaminophen,cold-remedy,yes,,,Combination - see unresolved
+Benylin,diphenhydramine,cough-cold,yes,,,
+Actifed,triprolidine,cough-cold,yes,,,
+Omeprazole,omeprazole,gastro,no,,,
+Amlodipine,amlodipine,cardiovascular,no,,,
+Lisinopril,lisinopril,cardiovascular,no,,,
+Metformin,metformin,antidiabetic,no,,,
+Glibenclamide,glyburide,antidiabetic,no,,,
+Salbutamol,albuterol,respiratory,no,,,Salbutamol is albuterol outside the US
+Ventolin,albuterol,respiratory,no,,,
+Prednisolone,prednisolone,corticosteroid,no,,,
+Warfarin,warfarin,anticoagulant,no,,,
+Furosemide,furosemide,cardiovascular,no,,,
+Lasix,furosemide,cardiovascular,no,,,
+Hydrochlorothiazide,hydrochlorothiazide,cardiovascular,no,,,
+Artesunate,artesunate,antimalarial,no,,,
+Chloroquine,chloroquine,antimalarial,no,,,
+Fansidar,sulfadoxine,antimalarial,yes,,,Sulfadoxine-pyrimethamine - sulfonamide

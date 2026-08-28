@@ -1,0 +1,23 @@
+# Condition contraindications (PRD §5.3).
+#
+# Transcribed DIRECTLY from the table in PRD §5.3. That table lists six
+# conditions and this file contains exactly those six, including G6PD deficiency,
+# which §5.3 explicitly flags as materially prevalent in Nigeria and belonging in
+# v1. Nothing is inferred or added.
+#
+# `drug_class` uses ids from drug-classes.json. `severity` uses the §5.1
+# AlertSeverity vocabulary.
+#
+# NOTE ON EXPLANATIONS: these restate the contraindication in plain language
+# without naming a treatment or a dose, per §2.2. They deliberately do not tell
+# the user what to do instead — that is a clinician's call, and §2.4 requires the
+# app to say so.
+condition_code,condition_label,drug_class,severity,explanation,source
+PEPTIC_ULCER,Peptic ulcer or GI bleed,nsaids,SERIOUS,"NSAIDs can irritate the stomach lining and raise the risk of bleeding in someone with a peptic ulcer or a history of gastrointestinal bleeding. Do not stop a prescribed medicine because of this alert — speak to your doctor or pharmacist.",PRD §5.3
+CKD,Chronic kidney disease,nsaids,SERIOUS,"NSAIDs can reduce blood flow to the kidneys and worsen existing chronic kidney disease. Do not stop a prescribed medicine because of this alert — speak to your doctor or pharmacist.",PRD §5.3
+ASTHMA_NSAID,Asthma (NSAID-sensitive),nsaids,SERIOUS,"Some people with asthma react to NSAIDs with worsening breathing symptoms. Do not stop a prescribed medicine because of this alert — speak to your doctor or pharmacist.",PRD §5.3
+LIVER_DISEASE,Liver disease,anilides,SERIOUS,"Paracetamol is processed by the liver, and cumulative intake carries added risk in liver disease. This matters most when several products contain paracetamol at once. Do not stop a prescribed medicine because of this alert — speak to your doctor or pharmacist.",PRD §5.3
+HYPERTENSION,Hypertension,nsaids,CAUTION,"NSAIDs can raise blood pressure and reduce the effect of some blood pressure medicines. Do not stop a prescribed medicine because of this alert — speak to your doctor or pharmacist.",PRD §5.3
+HYPERTENSION,Hypertension,decongestants,CAUTION,"Decongestants can raise blood pressure. Do not stop a prescribed medicine because of this alert — speak to your doctor or pharmacist.",PRD §5.3
+G6PD,G6PD deficiency,sulfonamide-antibiotics,SERIOUS,"Sulfonamides can trigger red blood cell breakdown in people with G6PD deficiency. Do not stop a prescribed medicine because of this alert — speak to your doctor or pharmacist.",PRD §5.3
+G6PD,G6PD deficiency,antimalarials,SERIOUS,"Some antimalarials can trigger red blood cell breakdown in people with G6PD deficiency. Do not stop a prescribed medicine because of this alert — speak to your doctor or pharmacist.",PRD §5.3

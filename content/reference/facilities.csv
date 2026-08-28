@@ -1,0 +1,28 @@
+# Verified facility directory (PRD §6.1, §6.3, F9).
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# DELIBERATELY EMPTY. EVERY ROW REQUIRES A PHONE CALL.
+# ─────────────────────────────────────────────────────────────────────────────
+# §6.3: "Facility verification is a safety requirement, not data hygiene. A
+# record with has_emergency = true appears on the escalation screen, so an
+# inaccurate one sends a person in crisis to a hospital that may have closed,
+# moved, or never had an emergency department."
+#
+# `verified_at` is NOT NULL in the schema for exactly this reason, and the step 6
+# constraint is explicit: has_emergency must never be set from an OSM tag, an
+# inference, or an agent's judgement. Only from a human verification record.
+#
+# So there is nothing an agent can legitimately put here. Seeding candidates from
+# Overpass is possible and the sync code supports it, but a candidate is not a
+# facility until someone has rung the number and confirmed it — and the launch
+# state has not been decided yet (PRD §14 open items).
+#
+# WHAT A ROW NEEDS
+#   verified_at   date the call was made
+#   verified_by   who made it
+#   phone_numbers at least one working number, especially when has_emergency=true
+#                 (a facility that cannot be called is of limited use in a crisis)
+#
+# Rows lacking verification belong in unverified-facilities.csv and are EXCLUDED,
+# on the same principle as a drug product with unresolved ingredients.
+id,facility_type,name,address,state,lga,latitude,longitude,phone_numbers,has_emergency,is_24_hours,verified_at,verified_by,source

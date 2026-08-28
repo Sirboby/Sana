@@ -18,7 +18,12 @@
     "db:reset": "supabase db reset",
     "db:push": "bun scripts/db-push.ts",
     "db:push:seed": "bun scripts/db-push.ts --seed",
-    "db:push:dry": "bun scripts/db-push.ts --dry-run"
+    "db:push:dry": "bun scripts/db-push.ts --dry-run",
+    "etl:rxnorm": "bun scripts/etl/fetch-rxnorm.ts",
+    "etl:openfda": "bun scripts/etl/fetch-openfda.ts",
+    "etl:catalog": "bun scripts/etl/build-catalog.ts",
+    "etl:all": "bun run etl:rxnorm && bun run etl:openfda && bun run etl:catalog",
+    "seed:reference": "bun scripts/etl/seed.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.5",

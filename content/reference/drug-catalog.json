@@ -1,0 +1,1268 @@
+[
+  {
+    "id": "da81c9ca-b468-4aaa-aee9-83608eea1474",
+    "rxnorm_cui": "161",
+    "nafdac_reg_no": null,
+    "generic_name": "acetaminophen",
+    "brand_names": [
+      "Panadol",
+      "Little Fevers",
+      "Bactimicina",
+      "Pamprin Max Formula",
+      "Pamprin Multi-Symptom",
+      "Pamprin Cramp Formula",
+      "Percogesic Reformulated Jan 2011",
+      "Premsyn PMS",
+      "Panadol PM",
+      "CounterAct Pain",
+      "Capacet",
+      "Nortemp",
+      "Acetadryl"
+    ],
+    "active_ingredients": [
+      {
+        "code": "161",
+        "name": "acetaminophen",
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["anilides"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:20.318Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=acetaminophen&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22acetaminophen%22&limit=1"
+    ]
+  },
+  {
+    "id": "7566b19b-7d48-4857-882e-a9ccf2aec9f2",
+    "rxnorm_cui": "1872070",
+    "nafdac_reg_no": null,
+    "generic_name": "acetaminophen / caffeine",
+    "brand_names": ["Panadol Extra"],
+    "active_ingredients": [
+      {
+        "code": "161",
+        "name": "acetaminophen",
+        "strength": "500",
+        "unit": "mg"
+      },
+      {
+        "code": "1886",
+        "name": "caffeine"
+      }
+    ],
+    "drug_classes": ["anilides"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:20.612Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Panadol%20Extra&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.brand_name%3A%22Panadol%20Extra%22&limit=1"
+    ]
+  },
+  {
+    "id": "41920084-70ab-4ff4-b139-ef70b23df078",
+    "rxnorm_cui": "161",
+    "nafdac_reg_no": null,
+    "generic_name": "acetaminophen",
+    "brand_names": [
+      "Paracetamol",
+      "Little Fevers",
+      "Bactimicina",
+      "Pamprin Max Formula",
+      "Pamprin Multi-Symptom",
+      "Pamprin Cramp Formula",
+      "Percogesic Reformulated Jan 2011",
+      "Premsyn PMS",
+      "Panadol PM",
+      "CounterAct Pain",
+      "Capacet",
+      "Nortemp",
+      "Acetadryl"
+    ],
+    "active_ingredients": [
+      {
+        "code": "161",
+        "name": "acetaminophen",
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["anilides"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:20.613Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=acetaminophen&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22acetaminophen%22&limit=1"
+    ]
+  },
+  {
+    "id": "0820b065-3dae-473f-b58e-a75a45cec7a4",
+    "rxnorm_cui": "161",
+    "nafdac_reg_no": null,
+    "generic_name": "acetaminophen",
+    "brand_names": [
+      "Emzor Paracetamol",
+      "Little Fevers",
+      "Bactimicina",
+      "Pamprin Max Formula",
+      "Pamprin Multi-Symptom",
+      "Pamprin Cramp Formula",
+      "Percogesic Reformulated Jan 2011",
+      "Premsyn PMS",
+      "Panadol PM",
+      "CounterAct Pain",
+      "Capacet",
+      "Nortemp",
+      "Acetadryl"
+    ],
+    "active_ingredients": [
+      {
+        "code": "161",
+        "name": "acetaminophen",
+        "strength": "500",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["anilides"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:20.613Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=acetaminophen&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22acetaminophen%22&limit=1"
+    ]
+  },
+  {
+    "id": "79c21d93-37e7-4ad7-8e25-0744b1a9386a",
+    "rxnorm_cui": "718834",
+    "nafdac_reg_no": null,
+    "generic_name": "artemether / lumefantrine",
+    "brand_names": ["Coartem"],
+    "active_ingredients": [
+      {
+        "code": "18343",
+        "name": "artemether"
+      },
+      {
+        "code": "847728",
+        "name": "lumefantrine"
+      }
+    ],
+    "drug_classes": ["antimalarials"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:21.145Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Coartem&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.brand_name%3A%22Coartem%22&limit=1"
+    ]
+  },
+  {
+    "id": "67ccefa8-49be-4d3a-ae72-3292b18bcce2",
+    "rxnorm_cui": "718834",
+    "nafdac_reg_no": null,
+    "generic_name": "artemether / lumefantrine",
+    "brand_names": ["Lonart", "Coartem"],
+    "active_ingredients": [
+      {
+        "code": "18343",
+        "name": "artemether"
+      },
+      {
+        "code": "847728",
+        "name": "lumefantrine"
+      }
+    ],
+    "drug_classes": ["antimalarials"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:21.145Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Coartem&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.brand_name%3A%22Coartem%22&limit=1"
+    ]
+  },
+  {
+    "id": "d699646d-11be-4b33-838d-8b0a2e8578fa",
+    "rxnorm_cui": "151392",
+    "nafdac_reg_no": null,
+    "generic_name": "clavulanate / amoxicillin",
+    "brand_names": ["Augmentin"],
+    "active_ingredients": [
+      {
+        "code": "48203",
+        "name": "clavulanate"
+      },
+      {
+        "code": "723",
+        "name": "amoxicillin"
+      }
+    ],
+    "drug_classes": ["penicillins"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:21.692Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Augmentin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.brand_name%3A%22Augmentin%22&limit=1"
+    ]
+  },
+  {
+    "id": "3eb16824-ea17-4422-82b5-9a3fa28c89c4",
+    "rxnorm_cui": "723",
+    "nafdac_reg_no": null,
+    "generic_name": "amoxicillin",
+    "brand_names": [
+      "Amoxil",
+      "Amoxi-tabs",
+      "Augmentin",
+      "Clavacillin",
+      "Biomox",
+      "Trimox",
+      "Talicia",
+      "Umbrellin",
+      "Betacilin",
+      "Kesium",
+      "Moxatag",
+      "Clavamox",
+      "Amoxi Drop"
+    ],
+    "active_ingredients": [
+      {
+        "code": "723",
+        "name": "amoxicillin"
+      }
+    ],
+    "drug_classes": ["penicillins"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:21.692Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amoxicillin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22amoxicillin%22&limit=1"
+    ]
+  },
+  {
+    "id": "bb0ad49f-62b8-488f-8264-dd3f01dc3cd2",
+    "rxnorm_cui": "723",
+    "nafdac_reg_no": null,
+    "generic_name": "amoxicillin",
+    "brand_names": [
+      "Amoxicillin",
+      "Amoxi-tabs",
+      "Augmentin",
+      "Clavacillin",
+      "Biomox",
+      "Trimox",
+      "Talicia",
+      "Umbrellin",
+      "Betacilin",
+      "Kesium",
+      "Moxatag",
+      "Clavamox",
+      "Amoxi Drop"
+    ],
+    "active_ingredients": [
+      {
+        "code": "723",
+        "name": "amoxicillin"
+      }
+    ],
+    "drug_classes": ["penicillins"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:21.692Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amoxicillin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22amoxicillin%22&limit=1"
+    ]
+  },
+  {
+    "id": "dd6791bf-a275-4e8f-bf12-8f307fdcb04e",
+    "rxnorm_cui": "2551",
+    "nafdac_reg_no": null,
+    "generic_name": "ciprofloxacin",
+    "brand_names": [
+      "Ciprofloxacin",
+      "Otovel",
+      "Cipro",
+      "Ciloxan",
+      "Cipro HC",
+      "Ciprodex",
+      "Proquin",
+      "Cetraxal"
+    ],
+    "active_ingredients": [
+      {
+        "code": "2551",
+        "name": "ciprofloxacin"
+      }
+    ],
+    "drug_classes": ["fluoroquinolones"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:22.012Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ciprofloxacin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ciprofloxacin%22&limit=1"
+    ]
+  },
+  {
+    "id": "4259fb64-e901-4990-854a-74d0c2b5b44f",
+    "rxnorm_cui": "2551",
+    "nafdac_reg_no": null,
+    "generic_name": "ciprofloxacin",
+    "brand_names": [
+      "Ciprotab",
+      "Otovel",
+      "Cipro",
+      "Ciloxan",
+      "Cipro HC",
+      "Ciprodex",
+      "Proquin",
+      "Cetraxal"
+    ],
+    "active_ingredients": [
+      {
+        "code": "2551",
+        "name": "ciprofloxacin"
+      }
+    ],
+    "drug_classes": ["fluoroquinolones"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:22.012Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ciprofloxacin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ciprofloxacin%22&limit=1"
+    ]
+  },
+  {
+    "id": "e53818af-cbcc-45dd-aef4-0d72b1042e8c",
+    "rxnorm_cui": "6922",
+    "nafdac_reg_no": null,
+    "generic_name": "metronidazole",
+    "brand_names": [
+      "Flagyl",
+      "Rosadan",
+      "Nuvessa",
+      "MetroGel",
+      "MetroCream",
+      "MetroLotion",
+      "Noritate",
+      "Likmez",
+      "Vandazole",
+      "Nydamax",
+      "Pylera"
+    ],
+    "active_ingredients": [
+      {
+        "code": "6922",
+        "name": "metronidazole"
+      }
+    ],
+    "drug_classes": ["nitroimidazoles"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:22.313Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metronidazole&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22metronidazole%22&limit=1"
+    ]
+  },
+  {
+    "id": "2ab712cf-7d28-49e7-979f-6b28a7df8cb6",
+    "rxnorm_cui": "6922",
+    "nafdac_reg_no": null,
+    "generic_name": "metronidazole",
+    "brand_names": [
+      "Metronidazole",
+      "Rosadan",
+      "Nuvessa",
+      "Flagyl",
+      "MetroGel",
+      "MetroCream",
+      "MetroLotion",
+      "Noritate",
+      "Likmez",
+      "Vandazole",
+      "Nydamax",
+      "Pylera"
+    ],
+    "active_ingredients": [
+      {
+        "code": "6922",
+        "name": "metronidazole"
+      }
+    ],
+    "drug_classes": ["nitroimidazoles"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:22.313Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metronidazole&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22metronidazole%22&limit=1"
+    ]
+  },
+  {
+    "id": "a83f37fa-4b62-48d2-81ca-220d8f3a220c",
+    "rxnorm_cui": "10831",
+    "nafdac_reg_no": null,
+    "generic_name": "sulfamethoxazole / trimethoprim",
+    "brand_names": ["Septrin", "Bactrim", "Sulfatrim"],
+    "active_ingredients": [
+      {
+        "code": "10180",
+        "name": "sulfamethoxazole"
+      },
+      {
+        "code": "10829",
+        "name": "trimethoprim"
+      }
+    ],
+    "drug_classes": ["sulfonamide-antibiotics"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:22.850Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sulfamethoxazole%20and%20trimethoprim&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22sulfamethoxazole%20and%20trimethoprim%22&limit=1"
+    ]
+  },
+  {
+    "id": "56718c08-c1d6-459c-8685-8566c1847b1a",
+    "rxnorm_cui": "10831",
+    "nafdac_reg_no": null,
+    "generic_name": "sulfamethoxazole / trimethoprim",
+    "brand_names": ["Co-trimoxazole", "Bactrim", "Sulfatrim"],
+    "active_ingredients": [
+      {
+        "code": "10180",
+        "name": "sulfamethoxazole"
+      },
+      {
+        "code": "10829",
+        "name": "trimethoprim"
+      }
+    ],
+    "drug_classes": ["sulfonamide-antibiotics"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:22.850Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sulfamethoxazole%20and%20trimethoprim&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22sulfamethoxazole%20and%20trimethoprim%22&limit=1"
+    ]
+  },
+  {
+    "id": "27b15151-db67-4ef3-8329-405e03194044",
+    "rxnorm_cui": "5640",
+    "nafdac_reg_no": null,
+    "generic_name": "ibuprofen",
+    "brand_names": [
+      "Ibuprofen",
+      "Duexis",
+      "Counteract IB",
+      "Proprinal",
+      "Ibudone",
+      "Advil",
+      "Motrin",
+      "Genpril",
+      "Ibu",
+      "Vicoprofen",
+      "Combogesic",
+      "Samson 8",
+      "Reprexain"
+    ],
+    "active_ingredients": [
+      {
+        "code": "5640",
+        "name": "ibuprofen",
+        "strength": "200",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["nsaids"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:23.142Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ibuprofen&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ibuprofen%22&limit=1"
+    ]
+  },
+  {
+    "id": "cf0c5dc1-9a2e-4b19-9522-d6d8693ae8da",
+    "rxnorm_cui": "5640",
+    "nafdac_reg_no": null,
+    "generic_name": "ibuprofen",
+    "brand_names": [
+      "Brufen",
+      "Duexis",
+      "Counteract IB",
+      "Proprinal",
+      "Ibudone",
+      "Advil",
+      "Motrin",
+      "Genpril",
+      "Ibu",
+      "Vicoprofen",
+      "Combogesic",
+      "Samson 8",
+      "Reprexain"
+    ],
+    "active_ingredients": [
+      {
+        "code": "5640",
+        "name": "ibuprofen",
+        "strength": "200",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["nsaids"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:23.142Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ibuprofen&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ibuprofen%22&limit=1"
+    ]
+  },
+  {
+    "id": "0f47f854-9fb5-4166-86f0-db6ceaefda9b",
+    "rxnorm_cui": "5640",
+    "nafdac_reg_no": null,
+    "generic_name": "ibuprofen",
+    "brand_names": [
+      "Nurofen",
+      "Duexis",
+      "Counteract IB",
+      "Proprinal",
+      "Ibudone",
+      "Advil",
+      "Motrin",
+      "Genpril",
+      "Ibu",
+      "Vicoprofen",
+      "Combogesic",
+      "Samson 8",
+      "Reprexain"
+    ],
+    "active_ingredients": [
+      {
+        "code": "5640",
+        "name": "ibuprofen",
+        "strength": "200",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["nsaids"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:23.142Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ibuprofen&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ibuprofen%22&limit=1"
+    ]
+  },
+  {
+    "id": "8e480f49-cba6-4a3b-85ee-257259ee3984",
+    "rxnorm_cui": "3355",
+    "nafdac_reg_no": null,
+    "generic_name": "diclofenac",
+    "brand_names": [
+      "Diclofenac",
+      "Surpass Anti-Inflammatory",
+      "Flector",
+      "Zorvolex",
+      "Voltaren",
+      "Cataflam",
+      "Licart",
+      "Aleve Arthritis Pain",
+      "Lofena",
+      "Trifena",
+      "Xiclo",
+      "Arthrotec",
+      "Zipsor"
+    ],
+    "active_ingredients": [
+      {
+        "code": "3355",
+        "name": "diclofenac",
+        "strength": "1",
+        "unit": "%"
+      }
+    ],
+    "drug_classes": ["nsaids"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:23.431Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diclofenac&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22diclofenac%22&limit=1"
+    ]
+  },
+  {
+    "id": "10b35630-4981-4804-9932-4e345a346e34",
+    "rxnorm_cui": "3355",
+    "nafdac_reg_no": null,
+    "generic_name": "diclofenac",
+    "brand_names": [
+      "Voltaren",
+      "Surpass Anti-Inflammatory",
+      "Flector",
+      "Zorvolex",
+      "Cataflam",
+      "Licart",
+      "Aleve Arthritis Pain",
+      "Lofena",
+      "Trifena",
+      "Xiclo",
+      "Arthrotec",
+      "Zipsor"
+    ],
+    "active_ingredients": [
+      {
+        "code": "3355",
+        "name": "diclofenac",
+        "strength": "1",
+        "unit": "%"
+      }
+    ],
+    "drug_classes": ["nsaids"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:23.431Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diclofenac&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22diclofenac%22&limit=1"
+    ]
+  },
+  {
+    "id": "f95e9739-4004-46db-846a-5de1e39634e1",
+    "rxnorm_cui": "81997",
+    "nafdac_reg_no": null,
+    "generic_name": "diclofenac",
+    "brand_names": ["Cataflam", "Lofena", "Cambia"],
+    "active_ingredients": [
+      {
+        "code": "3355",
+        "name": "diclofenac"
+      }
+    ],
+    "drug_classes": ["nsaids"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:23.431Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diclofenac%20potassium&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22diclofenac%20potassium%22&limit=1"
+    ]
+  },
+  {
+    "id": "8435876d-e999-4123-adac-664e6dcf6890",
+    "rxnorm_cui": "1191",
+    "nafdac_reg_no": null,
+    "generic_name": "aspirin",
+    "brand_names": [
+      "Aspirin",
+      "Pamprin Max Formula",
+      "Stanback Headache Powder Reformulated Jan 2011",
+      "BC Arthritis",
+      "BC Original Formula",
+      "Arthriten Inflammatory Pain",
+      "Bromo Seltzer Antacid Pain Reliever",
+      "Exaprin",
+      "Backaid IPF",
+      "Ascomp",
+      "Excedrin PM Triple Action",
+      "Aspi-Cor",
+      "Durlaza"
+    ],
+    "active_ingredients": [
+      {
+        "code": "1191",
+        "name": "aspirin",
+        "strength": "81",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["antiplatelets", "nsaids"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:23.698Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=aspirin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22aspirin%22&limit=1"
+    ]
+  },
+  {
+    "id": "86900050-73ad-474c-8ac2-d8e4fa3d279c",
+    "rxnorm_cui": "2400",
+    "nafdac_reg_no": null,
+    "generic_name": "chlorpheniramine",
+    "brand_names": [
+      "Piriton",
+      "Zodryl DAC",
+      "Zodryl AC",
+      "Tuzistra",
+      "Chlor-Trimeton",
+      "Tuxarin",
+      "Aller-Chlor",
+      "Ventuss",
+      "Clorrelief",
+      "Tannic-12 S",
+      "Tussionex",
+      "Poly Hist PD",
+      "Wal-finate"
+    ],
+    "active_ingredients": [
+      {
+        "code": "2400",
+        "name": "chlorpheniramine",
+        "strength": "4",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["antihistamines"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:23.991Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=chlorpheniramine&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22chlorpheniramine%22&limit=1"
+    ]
+  },
+  {
+    "id": "4e73bf29-32ec-4b6b-bc9f-d44281602a94",
+    "rxnorm_cui": "2400",
+    "nafdac_reg_no": null,
+    "generic_name": "chlorpheniramine",
+    "brand_names": [
+      "Chlorpheniramine",
+      "Zodryl DAC",
+      "Zodryl AC",
+      "Tuzistra",
+      "Chlor-Trimeton",
+      "Tuxarin",
+      "Aller-Chlor",
+      "Ventuss",
+      "Clorrelief",
+      "Tannic-12 S",
+      "Tussionex",
+      "Poly Hist PD",
+      "Wal-finate"
+    ],
+    "active_ingredients": [
+      {
+        "code": "2400",
+        "name": "chlorpheniramine",
+        "strength": "4",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["antihistamines"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:23.991Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=chlorpheniramine&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22chlorpheniramine%22&limit=1"
+    ]
+  },
+  {
+    "id": "6270b805-6419-40bb-8669-78bec68a78c0",
+    "rxnorm_cui": "28889",
+    "nafdac_reg_no": null,
+    "generic_name": "loratadine",
+    "brand_names": [
+      "Loratadine",
+      "Wal-itin D",
+      "Loradamed",
+      "Wal-vert",
+      "Allerclear",
+      "Cleartime Indoor & Outdoor Allergies",
+      "Claritin",
+      "Claritin-D",
+      "Alavert",
+      "Tavist Non-Sedating",
+      "Alavert D",
+      "Wal-itin"
+    ],
+    "active_ingredients": [
+      {
+        "code": "28889",
+        "name": "loratadine",
+        "strength": "10",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["antihistamines"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:24.258Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=loratadine&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22loratadine%22&limit=1"
+    ]
+  },
+  {
+    "id": "0ca614b5-c979-4063-83a2-0ab2ad61f551",
+    "rxnorm_cui": "20610",
+    "nafdac_reg_no": null,
+    "generic_name": "cetirizine",
+    "brand_names": [
+      "Cetirizine",
+      "Wal-Zyr",
+      "Wal Zyr 24 Hour Allergy",
+      "Zerviate",
+      "Quzyttir",
+      "Zyrtec-D",
+      "Zyrtec",
+      "Aller-Tec",
+      "Aller-Tec D",
+      "Alleroff",
+      "Wal Zyr D"
+    ],
+    "active_ingredients": [
+      {
+        "code": "20610",
+        "name": "cetirizine",
+        "strength": "2.5",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["antihistamines"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:24.556Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cetirizine&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22cetirizine%22&limit=1"
+    ]
+  },
+  {
+    "id": "7c3e18e9-3146-4a6b-8d78-a282ad84d354",
+    "rxnorm_cui": "7646",
+    "nafdac_reg_no": null,
+    "generic_name": "omeprazole",
+    "brand_names": [
+      "Omeprazole",
+      "Yosprala",
+      "Prilosec",
+      "Talicia",
+      "Konvomep",
+      "Primeguard",
+      "Gastrobim",
+      "Zegerid Reformulated Aug 2006",
+      "UlcerGard"
+    ],
+    "active_ingredients": [
+      {
+        "code": "7646",
+        "name": "omeprazole",
+        "strength": "20",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["proton-pump-inhibitors"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:24.833Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=omeprazole&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22omeprazole%22&limit=1"
+    ]
+  },
+  {
+    "id": "9329710d-e64f-44c3-b566-f5ce7978f5d0",
+    "rxnorm_cui": "17767",
+    "nafdac_reg_no": null,
+    "generic_name": "amlodipine",
+    "brand_names": [
+      "Amlodipine",
+      "Tribenzor",
+      "Exforge HCT",
+      "Twynsta",
+      "Prestalia",
+      "Consensi",
+      "Lotrel",
+      "Katerzia",
+      "Norliqva",
+      "Sdamlo",
+      "Widaplik",
+      "Caduet",
+      "Norvasc"
+    ],
+    "active_ingredients": [
+      {
+        "code": "17767",
+        "name": "amlodipine"
+      }
+    ],
+    "drug_classes": ["ace-inhibitors", "calcium-channel-blockers"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:25.130Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amlodipine&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22amlodipine%22&limit=1"
+    ]
+  },
+  {
+    "id": "86bc7a5d-823a-4a1b-8486-304608f6c478",
+    "rxnorm_cui": "29046",
+    "nafdac_reg_no": null,
+    "generic_name": "lisinopril",
+    "brand_names": [
+      "Lisinopril",
+      "Qbrelis",
+      "Zestril",
+      "Prinivil",
+      "Zestoretic"
+    ],
+    "active_ingredients": [
+      {
+        "code": "29046",
+        "name": "lisinopril"
+      }
+    ],
+    "drug_classes": ["ace-inhibitors"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:25.412Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lisinopril&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22lisinopril%22&limit=1"
+    ]
+  },
+  {
+    "id": "eea45787-0400-4e97-8155-b46f0f2a5461",
+    "rxnorm_cui": "6809",
+    "nafdac_reg_no": null,
+    "generic_name": "metformin",
+    "brand_names": [
+      "Metformin",
+      "Kazano",
+      "Jentadueto",
+      "Kombiglyze",
+      "Janumet",
+      "Glucophage",
+      "Invokamet",
+      "Xigduo",
+      "Synjardy",
+      "Segluromet",
+      "Trijardy",
+      "Zituvimet",
+      "Riomet"
+    ],
+    "active_ingredients": [
+      {
+        "code": "6809",
+        "name": "metformin"
+      }
+    ],
+    "drug_classes": ["biguanides"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:25.677Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metformin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22metformin%22&limit=1"
+    ]
+  },
+  {
+    "id": "7a20222c-b024-4670-835f-b3ba42a45089",
+    "rxnorm_cui": "4815",
+    "nafdac_reg_no": null,
+    "generic_name": "glyburide",
+    "brand_names": ["Glibenclamide", "Glynase"],
+    "active_ingredients": [
+      {
+        "code": "4815",
+        "name": "glyburide"
+      }
+    ],
+    "drug_classes": ["sulfonylureas"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:25.942Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=glyburide&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22glyburide%22&limit=1"
+    ]
+  },
+  {
+    "id": "1015064d-6aaf-463b-baba-d0767ac4dc88",
+    "rxnorm_cui": "435",
+    "nafdac_reg_no": null,
+    "generic_name": "albuterol",
+    "brand_names": [
+      "Salbutamol",
+      "Combivent",
+      "Proventil",
+      "Airsupra",
+      "ProAir",
+      "Ventolin"
+    ],
+    "active_ingredients": [
+      {
+        "code": "435",
+        "name": "albuterol"
+      }
+    ],
+    "drug_classes": ["beta2-agonists"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:26.224Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=albuterol&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22albuterol%22&limit=1"
+    ]
+  },
+  {
+    "id": "db906804-5c6e-47b0-8780-1b04c37fe8fb",
+    "rxnorm_cui": "435",
+    "nafdac_reg_no": null,
+    "generic_name": "albuterol",
+    "brand_names": ["Ventolin", "Combivent", "Proventil", "Airsupra", "ProAir"],
+    "active_ingredients": [
+      {
+        "code": "435",
+        "name": "albuterol"
+      }
+    ],
+    "drug_classes": ["beta2-agonists"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:26.224Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=albuterol&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22albuterol%22&limit=1"
+    ]
+  },
+  {
+    "id": "b8e98961-c1b5-476b-b95c-de0a7a9ee0cc",
+    "rxnorm_cui": "8638",
+    "nafdac_reg_no": null,
+    "generic_name": "prednisolone",
+    "brand_names": [
+      "Prednisolone",
+      "Prednistab",
+      "Pred Forte",
+      "Pred Mild",
+      "Blephamide",
+      "Pediapred",
+      "Cortamine",
+      "Orapred",
+      "MILLIPRED",
+      "Veripred",
+      "Surolan",
+      "Temaril-P"
+    ],
+    "active_ingredients": [
+      {
+        "code": "8638",
+        "name": "prednisolone"
+      }
+    ],
+    "drug_classes": ["corticosteroids"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:26.526Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=prednisolone&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22prednisolone%22&limit=1"
+    ]
+  },
+  {
+    "id": "035991a9-40a1-4f5b-83f8-bef243fac104",
+    "rxnorm_cui": "11289",
+    "nafdac_reg_no": null,
+    "generic_name": "warfarin",
+    "brand_names": ["Warfarin", "Coumadin", "Jantoven"],
+    "active_ingredients": [
+      {
+        "code": "11289",
+        "name": "warfarin"
+      }
+    ],
+    "drug_classes": ["vitamin-k-antagonists"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:26.792Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=warfarin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22warfarin%22&limit=1"
+    ]
+  },
+  {
+    "id": "5a415b89-4dd7-4503-9796-0e8aa818b08c",
+    "rxnorm_cui": "4603",
+    "nafdac_reg_no": null,
+    "generic_name": "furosemide",
+    "brand_names": [
+      "Furosemide",
+      "Disal",
+      "Lasix",
+      "Furoscix",
+      "Salix - substance"
+    ],
+    "active_ingredients": [
+      {
+        "code": "4603",
+        "name": "furosemide"
+      }
+    ],
+    "drug_classes": ["loop-diuretics"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:27.058Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=furosemide&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22furosemide%22&limit=1"
+    ]
+  },
+  {
+    "id": "1f4a47bb-c4b2-41b1-8240-709f6e3fcf96",
+    "rxnorm_cui": "4603",
+    "nafdac_reg_no": null,
+    "generic_name": "furosemide",
+    "brand_names": ["Lasix", "Disal", "Furoscix", "Salix - substance"],
+    "active_ingredients": [
+      {
+        "code": "4603",
+        "name": "furosemide"
+      }
+    ],
+    "drug_classes": ["loop-diuretics"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:27.058Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=furosemide&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22furosemide%22&limit=1"
+    ]
+  },
+  {
+    "id": "fba01453-edbd-4e8f-961d-7adce95d82e2",
+    "rxnorm_cui": "5487",
+    "nafdac_reg_no": null,
+    "generic_name": "hydrochlorothiazide",
+    "brand_names": [
+      "Hydrochlorothiazide",
+      "Tribenzor",
+      "Exforge HCT",
+      "Tekturna HCT",
+      "Accuretic",
+      "Vaseretic",
+      "Diovan HCT",
+      "Hyzaar",
+      "Lopressor HCT",
+      "Lotensin HCT",
+      "Dyazide",
+      "Avalide",
+      "Inzirqo"
+    ],
+    "active_ingredients": [
+      {
+        "code": "5487",
+        "name": "hydrochlorothiazide"
+      }
+    ],
+    "drug_classes": ["thiazide-diuretics"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:27.355Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=hydrochlorothiazide&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22hydrochlorothiazide%22&limit=1"
+    ]
+  },
+  {
+    "id": "bb0da071-5921-4d7b-81dd-302f6142efde",
+    "rxnorm_cui": "18346",
+    "nafdac_reg_no": null,
+    "generic_name": "artesunate",
+    "brand_names": ["Artesunate"],
+    "active_ingredients": [
+      {
+        "code": "18346",
+        "name": "artesunate"
+      }
+    ],
+    "drug_classes": ["antimalarials"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:27.611Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=artesunate&search=0"
+    ]
+  },
+  {
+    "id": "aea04f37-6920-44e7-8387-fc43017c0c41",
+    "rxnorm_cui": "2393",
+    "nafdac_reg_no": null,
+    "generic_name": "chloroquine",
+    "brand_names": ["Chloroquine"],
+    "active_ingredients": [
+      {
+        "code": "2393",
+        "name": "chloroquine"
+      }
+    ],
+    "drug_classes": ["antimalarials"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:29:27.881Z",
+    "_sources": [
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=chloroquine&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22chloroquine%22&limit=1"
+    ]
+  }
+]

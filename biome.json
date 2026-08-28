@@ -29,7 +29,8 @@
       ".agents/**",
       "supabase/.branches/**",
       "supabase/.temp/**",
-      "*.tsbuildinfo"
+      "*.tsbuildinfo",
+      "content/reference/.cache/**"
     ]
   }
 }

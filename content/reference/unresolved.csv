@@ -1,0 +1,10 @@
+local_brand,lookup_term,reason,detail
+P-Alaxin,dihydroartemisinin,no ingredient resolved from RxNorm,"Absent from RxNorm, which indexes US products. Needs local curation."
+Ampiclox,ampicillin,combination product resolved to a single ingredient,Resolved only ampicillin. A partial ingredient list would silently defeat duplicate detection.
+Alabukun,aspirin,combination product resolved to a single ingredient,Resolved only aspirin. A partial ingredient list would silently defeat duplicate detection.
+Phensic,aspirin,combination product resolved to a single ingredient,Resolved only aspirin. A partial ingredient list would silently defeat duplicate detection.
+Coldrex,Coldrex,no ingredient resolved from RxNorm,"Absent from RxNorm, which indexes US products. Needs local curation."
+Procold,acetaminophen,combination product resolved to a single ingredient,Resolved only acetaminophen. A partial ingredient list would silently defeat duplicate detection.
+Benylin,diphenhydramine,combination product resolved to a single ingredient,Resolved only diphenhydramine. A partial ingredient list would silently defeat duplicate detection.
+Actifed,triprolidine,combination product resolved to a single ingredient,Resolved only triprolidine. A partial ingredient list would silently defeat duplicate detection.
+Fansidar,sulfadoxine,combination product resolved to a single ingredient,Resolved only sulfadoxine. A partial ingredient list would silently defeat duplicate detection.

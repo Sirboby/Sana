@@ -1,0 +1,155 @@
+{
+  "$comment": [
+    "Controlled drug-class vocabulary for Sana (PRD §5.2, §5.3, §6.3).",
+    "",
+    "Class MEMBERSHIP is not authored here. Each class is defined by one or more",
+    "WHO ATC code prefixes, and a drug belongs to it when RxClass reports that ATC",
+    "code for the drug's ingredient. So membership is derived from an authoritative",
+    "classification, not from anyone's judgement, and it is reproducible.",
+    "",
+    "The class list itself is driven by what §5.2 and §5.3 require the screening",
+    "engine to reason about. Step 8 depends on these exact `id` strings."
+  ],
+  "version": "1.0.0",
+  "codeSystem": "WHO ATC",
+  "classes": [
+    {
+      "id": "penicillins",
+      "label": "Penicillins",
+      "atcPrefixes": ["J01C"],
+      "source": "WHO ATC J01C; PRD §5.2"
+    },
+    {
+      "id": "cephalosporins",
+      "label": "Cephalosporins",
+      "atcPrefixes": ["J01DB", "J01DC", "J01DD", "J01DE"],
+      "source": "WHO ATC J01DB-DE; PRD §5.2"
+    },
+    {
+      "id": "carbapenems",
+      "label": "Carbapenems",
+      "atcPrefixes": ["J01DH"],
+      "source": "WHO ATC J01DH; PRD §5.2"
+    },
+    {
+      "id": "sulfonamide-antibiotics",
+      "label": "Sulfonamide antibiotics",
+      "atcPrefixes": ["J01E"],
+      "source": "WHO ATC J01E; PRD §5.2, §5.3"
+    },
+    {
+      "id": "macrolides",
+      "label": "Macrolides",
+      "atcPrefixes": ["J01FA"],
+      "source": "WHO ATC J01FA; PRD §5.2"
+    },
+    {
+      "id": "nsaids",
+      "label": "NSAIDs",
+      "atcPrefixes": ["M01A", "N02BA", "M02AA"],
+      "source": "WHO ATC M01A/M02AA; N02BA included because PRD §5.2 states NSAID cross-reactivity covers aspirin"
+    },
+    {
+      "id": "anilides",
+      "label": "Paracetamol (anilides)",
+      "atcPrefixes": ["N02BE"],
+      "source": "WHO ATC N02BE; PRD §5.3 liver disease row"
+    },
+    {
+      "id": "antimalarials",
+      "label": "Antimalarials",
+      "atcPrefixes": ["P01B"],
+      "source": "WHO ATC P01B; PRD §5.3 G6PD row"
+    },
+    {
+      "id": "fluoroquinolones",
+      "label": "Fluoroquinolones",
+      "atcPrefixes": ["J01M"],
+      "source": "WHO ATC J01M"
+    },
+    {
+      "id": "nitroimidazoles",
+      "label": "Nitroimidazoles",
+      "atcPrefixes": ["J01XD", "P01AB"],
+      "source": "WHO ATC J01XD/P01AB"
+    },
+    {
+      "id": "antihistamines",
+      "label": "Antihistamines",
+      "atcPrefixes": ["R06A"],
+      "source": "WHO ATC R06A"
+    },
+    {
+      "id": "ace-inhibitors",
+      "label": "ACE inhibitors",
+      "atcPrefixes": ["C09A", "C09B"],
+      "source": "WHO ATC C09A/C09B"
+    },
+    {
+      "id": "biguanides",
+      "label": "Biguanides",
+      "atcPrefixes": ["A10BA"],
+      "source": "WHO ATC A10BA"
+    },
+    {
+      "id": "sulfonylureas",
+      "label": "Sulfonylureas",
+      "atcPrefixes": ["A10BB"],
+      "source": "WHO ATC A10BB"
+    },
+    {
+      "id": "proton-pump-inhibitors",
+      "label": "Proton pump inhibitors",
+      "atcPrefixes": ["A02BC"],
+      "source": "WHO ATC A02BC"
+    },
+    {
+      "id": "loop-diuretics",
+      "label": "Loop diuretics",
+      "atcPrefixes": ["C03C"],
+      "source": "WHO ATC C03C"
+    },
+    {
+      "id": "thiazide-diuretics",
+      "label": "Thiazide diuretics",
+      "atcPrefixes": ["C03A"],
+      "source": "WHO ATC C03A"
+    },
+    {
+      "id": "beta2-agonists",
+      "label": "Beta-2 agonists",
+      "atcPrefixes": ["R03AC", "R03CC"],
+      "source": "WHO ATC R03AC/R03CC"
+    },
+    {
+      "id": "corticosteroids",
+      "label": "Corticosteroids",
+      "atcPrefixes": ["H02AB"],
+      "source": "WHO ATC H02AB"
+    },
+    {
+      "id": "vitamin-k-antagonists",
+      "label": "Vitamin K antagonists",
+      "atcPrefixes": ["B01AA"],
+      "source": "WHO ATC B01AA"
+    },
+    {
+      "id": "antiplatelets",
+      "label": "Antiplatelet agents",
+      "atcPrefixes": ["B01AC"],
+      "source": "WHO ATC B01AC"
+    },
+    {
+      "id": "calcium-channel-blockers",
+      "label": "Calcium channel blockers",
+      "atcPrefixes": ["C08C", "C08D"],
+      "source": "WHO ATC C08C/C08D"
+    },
+    {
+      "id": "decongestants",
+      "label": "Decongestants",
+      "atcPrefixes": ["R01BA", "R01AA"],
+      "source": "WHO ATC R01BA/R01AA; PRD §5.3 hypertension row"
+    }
+  ]
+}
