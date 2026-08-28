@@ -31,8 +31,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:20.318Z",
+    "updated_at": "2026-08-28T08:55:09.577Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=acetaminophen&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22acetaminophen%22&limit=1"
     ]
@@ -59,8 +60,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:20.612Z",
+    "updated_at": "2026-08-28T08:55:09.578Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Panadol%20Extra&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.brand_name%3A%22Panadol%20Extra%22&limit=1"
     ]
@@ -97,8 +99,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:20.613Z",
+    "updated_at": "2026-08-28T08:55:09.578Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=acetaminophen&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22acetaminophen%22&limit=1"
     ]
@@ -135,8 +138,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:20.613Z",
+    "updated_at": "2026-08-28T08:55:09.578Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=acetaminophen&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22acetaminophen%22&limit=1"
     ]
@@ -161,8 +165,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:21.145Z",
+    "updated_at": "2026-08-28T08:55:09.579Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Coartem&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.brand_name%3A%22Coartem%22&limit=1"
     ]
@@ -187,8 +192,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:21.145Z",
+    "updated_at": "2026-08-28T08:55:09.579Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Coartem&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.brand_name%3A%22Coartem%22&limit=1"
     ]
@@ -213,8 +219,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:21.692Z",
+    "updated_at": "2026-08-28T08:55:09.580Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Augmentin&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.brand_name%3A%22Augmentin%22&limit=1"
     ]
@@ -249,8 +256,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:21.692Z",
+    "updated_at": "2026-08-28T08:55:09.580Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amoxicillin&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22amoxicillin%22&limit=1"
     ]
@@ -285,8 +293,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:21.692Z",
+    "updated_at": "2026-08-28T08:55:09.580Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amoxicillin&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22amoxicillin%22&limit=1"
     ]
@@ -316,8 +325,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:22.012Z",
+    "updated_at": "2026-08-28T08:55:09.580Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ciprofloxacin&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ciprofloxacin%22&limit=1"
     ]
@@ -347,8 +357,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:22.012Z",
+    "updated_at": "2026-08-28T08:55:09.580Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ciprofloxacin&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ciprofloxacin%22&limit=1"
     ]
@@ -381,8 +392,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:22.313Z",
+    "updated_at": "2026-08-28T08:55:09.581Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metronidazole&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22metronidazole%22&limit=1"
     ]
@@ -416,8 +428,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:22.313Z",
+    "updated_at": "2026-08-28T08:55:09.581Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metronidazole&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22metronidazole%22&limit=1"
     ]
@@ -442,8 +455,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:22.850Z",
+    "updated_at": "2026-08-28T08:55:09.582Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sulfamethoxazole%20and%20trimethoprim&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22sulfamethoxazole%20and%20trimethoprim%22&limit=1"
     ]
@@ -468,8 +482,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:22.850Z",
+    "updated_at": "2026-08-28T08:55:09.582Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sulfamethoxazole%20and%20trimethoprim&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22sulfamethoxazole%20and%20trimethoprim%22&limit=1"
     ]
@@ -506,8 +521,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:23.142Z",
+    "updated_at": "2026-08-28T08:55:09.583Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ibuprofen&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ibuprofen%22&limit=1"
     ]
@@ -544,8 +560,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:23.142Z",
+    "updated_at": "2026-08-28T08:55:09.583Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ibuprofen&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ibuprofen%22&limit=1"
     ]
@@ -582,8 +599,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:23.142Z",
+    "updated_at": "2026-08-28T08:55:09.583Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ibuprofen&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ibuprofen%22&limit=1"
     ]
@@ -620,8 +638,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:23.431Z",
+    "updated_at": "2026-08-28T08:55:09.584Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diclofenac&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22diclofenac%22&limit=1"
     ]
@@ -657,8 +676,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:23.431Z",
+    "updated_at": "2026-08-28T08:55:09.584Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diclofenac&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22diclofenac%22&limit=1"
     ]
@@ -679,8 +699,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:23.431Z",
+    "updated_at": "2026-08-28T08:55:09.584Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=diclofenac%20potassium&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22diclofenac%20potassium%22&limit=1"
     ]
@@ -717,8 +738,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:23.698Z",
+    "updated_at": "2026-08-28T08:55:09.584Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=aspirin&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22aspirin%22&limit=1"
     ]
@@ -755,8 +777,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:23.991Z",
+    "updated_at": "2026-08-28T08:55:09.584Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=chlorpheniramine&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22chlorpheniramine%22&limit=1"
     ]
@@ -793,8 +816,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:23.991Z",
+    "updated_at": "2026-08-28T08:55:09.584Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=chlorpheniramine&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22chlorpheniramine%22&limit=1"
     ]
@@ -830,8 +854,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:24.258Z",
+    "updated_at": "2026-08-28T08:55:09.585Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=loratadine&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22loratadine%22&limit=1"
     ]
@@ -866,8 +891,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:24.556Z",
+    "updated_at": "2026-08-28T08:55:09.585Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cetirizine&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22cetirizine%22&limit=1"
     ]
@@ -900,8 +926,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:24.833Z",
+    "updated_at": "2026-08-28T08:55:09.586Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=omeprazole&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22omeprazole%22&limit=1"
     ]
@@ -936,8 +963,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:25.130Z",
+    "updated_at": "2026-08-28T08:55:09.586Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amlodipine&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22amlodipine%22&limit=1"
     ]
@@ -964,8 +992,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:25.412Z",
+    "updated_at": "2026-08-28T08:55:09.587Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lisinopril&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22lisinopril%22&limit=1"
     ]
@@ -1000,8 +1029,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:25.677Z",
+    "updated_at": "2026-08-28T08:55:09.587Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metformin&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22metformin%22&limit=1"
     ]
@@ -1022,8 +1052,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:25.942Z",
+    "updated_at": "2026-08-28T08:55:09.587Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=glyburide&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22glyburide%22&limit=1"
     ]
@@ -1051,8 +1082,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:26.224Z",
+    "updated_at": "2026-08-28T08:55:09.588Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=albuterol&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22albuterol%22&limit=1"
     ]
@@ -1073,8 +1105,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:26.224Z",
+    "updated_at": "2026-08-28T08:55:09.588Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=albuterol&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22albuterol%22&limit=1"
     ]
@@ -1108,8 +1141,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:26.526Z",
+    "updated_at": "2026-08-28T08:55:09.588Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=prednisolone&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22prednisolone%22&limit=1"
     ]
@@ -1130,8 +1164,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:26.792Z",
+    "updated_at": "2026-08-28T08:55:09.588Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=warfarin&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22warfarin%22&limit=1"
     ]
@@ -1158,8 +1193,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:27.058Z",
+    "updated_at": "2026-08-28T08:55:09.589Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=furosemide&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22furosemide%22&limit=1"
     ]
@@ -1180,8 +1216,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:27.058Z",
+    "updated_at": "2026-08-28T08:55:09.589Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=furosemide&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22furosemide%22&limit=1"
     ]
@@ -1216,8 +1253,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:27.355Z",
+    "updated_at": "2026-08-28T08:55:09.589Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=hydrochlorothiazide&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22hydrochlorothiazide%22&limit=1"
     ]
@@ -1238,8 +1276,9 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:27.611Z",
+    "updated_at": "2026-08-28T08:55:09.590Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=artesunate&search=0"
     ]
   },
@@ -1259,10 +1298,188 @@
     "dosage_form": null,
     "is_otc": false,
     "region": "NG",
-    "updated_at": "2026-08-28T08:29:27.881Z",
+    "updated_at": "2026-08-28T08:55:09.590Z",
     "_sources": [
+      "rxnorm",
       "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=chloroquine&search=0",
       "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22chloroquine%22&limit=1"
+    ]
+  },
+  {
+    "id": "9c27a667-0c82-4f45-86f5-a66dea8a9e5a",
+    "rxnorm_cui": "2231",
+    "nafdac_reg_no": null,
+    "generic_name": "cephalexin",
+    "brand_names": ["Cefalexin", "Rilexine", "Keflex"],
+    "active_ingredients": [
+      {
+        "code": "2231",
+        "name": "cephalexin"
+      }
+    ],
+    "drug_classes": ["cephalosporins"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:55:10.991Z",
+    "_sources": [
+      "rxnorm",
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cephalexin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22cephalexin%22&limit=1"
+    ]
+  },
+  {
+    "id": "34791e31-ea49-4943-821c-f788e1ec2b77",
+    "rxnorm_cui": "2231",
+    "nafdac_reg_no": null,
+    "generic_name": "cephalexin",
+    "brand_names": ["Keflex", "Rilexine"],
+    "active_ingredients": [
+      {
+        "code": "2231",
+        "name": "cephalexin"
+      }
+    ],
+    "drug_classes": ["cephalosporins"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:55:10.991Z",
+    "_sources": [
+      "rxnorm",
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cephalexin&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22cephalexin%22&limit=1"
+    ]
+  },
+  {
+    "id": "8052f819-dfdf-422b-9f8d-da3260321a44",
+    "rxnorm_cui": "2193",
+    "nafdac_reg_no": null,
+    "generic_name": "ceftriaxone",
+    "brand_names": ["Ceftriaxone"],
+    "active_ingredients": [
+      {
+        "code": "2193",
+        "name": "ceftriaxone"
+      }
+    ],
+    "drug_classes": ["cephalosporins"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:55:11.288Z",
+    "_sources": [
+      "rxnorm",
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ceftriaxone&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22ceftriaxone%22&limit=1"
+    ]
+  },
+  {
+    "id": "b3bb71c1-25b3-414b-869f-75f76d96f430",
+    "rxnorm_cui": "2194",
+    "nafdac_reg_no": null,
+    "generic_name": "cefuroxime",
+    "brand_names": ["Cefuroxime"],
+    "active_ingredients": [
+      {
+        "code": "2194",
+        "name": "cefuroxime"
+      }
+    ],
+    "drug_classes": ["cephalosporins"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:55:11.556Z",
+    "_sources": [
+      "rxnorm",
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=cefuroxime&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22cefuroxime%22&limit=1"
+    ]
+  },
+  {
+    "id": "da8eaac1-cda1-446b-972f-9eaaa82fdf2c",
+    "rxnorm_cui": "8896",
+    "nafdac_reg_no": null,
+    "generic_name": "pseudoephedrine",
+    "brand_names": [
+      "Pseudoephedrine",
+      "Wal-Act",
+      "Wal-itin D",
+      "Lortuss EX",
+      "Wal-Fex D",
+      "M-End Max D",
+      "Stahist AD",
+      "Zephrex-D",
+      "Nexafed",
+      "Allerclear",
+      "Zodryl DEC",
+      "Zodryl DAC",
+      "Hycofenix"
+    ],
+    "active_ingredients": [
+      {
+        "code": "8896",
+        "name": "pseudoephedrine",
+        "strength": "120",
+        "unit": "mg"
+      }
+    ],
+    "drug_classes": ["decongestants"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:55:11.858Z",
+    "_sources": [
+      "rxnorm",
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=pseudoephedrine&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22pseudoephedrine%22&limit=1"
+    ]
+  },
+  {
+    "id": "dae92fe5-bb1f-4a6b-a1f6-158e96086a50",
+    "rxnorm_cui": "39841",
+    "nafdac_reg_no": null,
+    "generic_name": "xylometazoline",
+    "brand_names": ["Xylometazoline"],
+    "active_ingredients": [
+      {
+        "code": "39841",
+        "name": "xylometazoline"
+      }
+    ],
+    "drug_classes": ["decongestants"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:55:12.130Z",
+    "_sources": [
+      "rxnorm",
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=xylometazoline&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22xylometazoline%22&limit=1"
+    ]
+  },
+  {
+    "id": "9f3a7e52-0946-4082-8698-3b130a880aed",
+    "rxnorm_cui": "39841",
+    "nafdac_reg_no": null,
+    "generic_name": "xylometazoline",
+    "brand_names": ["Otrivin"],
+    "active_ingredients": [
+      {
+        "code": "39841",
+        "name": "xylometazoline"
+      }
+    ],
+    "drug_classes": ["decongestants"],
+    "dosage_form": null,
+    "is_otc": false,
+    "region": "NG",
+    "updated_at": "2026-08-28T08:55:12.130Z",
+    "_sources": [
+      "rxnorm",
+      "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=xylometazoline&search=0",
+      "https://api.fda.gov/drug/label.json?search=openfda.generic_name%3A%22xylometazoline%22&limit=1"
     ]
   }
 ]

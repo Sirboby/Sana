@@ -23,7 +23,7 @@
   "alertCopy": {
     "DUPLICATE_INGREDIENT": {
       "title": "Two medicines contain the same ingredient",
-      "body": "Both products contain the same active ingredient."
+      "body": "{{drugA}} and {{drugB}} both contain {{ingredient}}. Taking them together means more of that ingredient than either product alone suggests."
     }
   },
   "disclaimerVersion": "1.0.0"

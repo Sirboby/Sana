@@ -77,3 +77,10 @@ Hydrochlorothiazide,hydrochlorothiazide,cardiovascular,no,,,
 Artesunate,artesunate,antimalarial,no,,,
 Chloroquine,chloroquine,antimalarial,no,,,
 Fansidar,sulfadoxine,antimalarial,yes,,,Sulfadoxine-pyrimethamine - sulfonamide
+Cefalexin,cephalexin,antibiotic,no,,,Cephalosporin - needed for the penicillin cross-reactivity path (PRD 5.2)
+Keflex,cephalexin,antibiotic,no,,,Cephalosporin brand
+Ceftriaxone,ceftriaxone,antibiotic,no,,,Cephalosporin widely used in Nigeria
+Cefuroxime,cefuroxime,antibiotic,no,,,Cephalosporin
+Pseudoephedrine,pseudoephedrine,decongestant,no,,,Decongestant - PRD 5.3 hypertension row
+Xylometazoline,xylometazoline,decongestant,no,,,Nasal decongestant
+Otrivin,xylometazoline,decongestant,no,,,Nasal decongestant brand
