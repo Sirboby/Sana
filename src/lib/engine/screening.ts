@@ -549,3 +549,114 @@ function normaliseSeverity(value: string): AlertSeverity {
 }
 
 export { SEVERITY_RANK, KIND_RANK };
+
+// ─────────────────────────── regimen re-screening ───────────────────────────
+
+export type RegimenScreeningInput = {
+  profile: ScreeningProfile;
+  allergies: Allergy[];
+  conditions: Condition[];
+  /** The whole active regimen. Each is screened in turn against the others. */
+  medications: Medication[];
+  rulepack: RulepackDocument | null;
+  reference: ReferenceData;
+  ingredientsByMedicationId: Record<string, { code: string; name: string }[]>;
+  classesByMedicationId: Record<string, string[]>;
+};
+
+/**
+ * Re-screen an ENTIRE regimen (step 10).
+ *
+ * ─────────────────────────────────────────────────────────────────────────────
+ * THE GAP THIS CLOSES
+ * ─────────────────────────────────────────────────────────────────────────────
+ * §5.1 screens a CANDIDATE against the existing regimen, which covers the moment
+ * a medicine is added. Nothing covered the reverse: the profile changing under a
+ * regimen that was already saved.
+ *
+ * Concretely — someone adds amoxicillin in March with no allergies recorded, and
+ * records a penicillin allergy in April. Both facts are now in the app, the
+ * conflict is real, and nothing ever says so. The app holds the evidence of a
+ * dangerous combination and stays silent, which is worse than not holding it at
+ * all, because the user believes they are being checked.
+ *
+ * So every allergy or condition change re-runs this, treating each active
+ * medicine in turn as the candidate against the others.
+ *
+ * Results are DEDUPLICATED. Screening A against B and then B against A raises
+ * the same shared-ingredient finding twice, and showing a user the same warning
+ * twice teaches them the warnings are noise.
+ */
+export function screenRegimen(input: RegimenScreeningInput): ScreeningResult {
+  const collected: Alert[] = [];
+  const uncheckable = new Set<string>();
+  const suppressed = new Map<string, SuppressedCheck>();
+
+  for (const candidate of input.medications) {
+    const others = input.medications.filter((m) => m.id !== candidate.id);
+
+    const result = screen({
+      profile: input.profile,
+      allergies: input.allergies,
+      conditions: input.conditions,
+      currentMedications: others,
+      candidate,
+      rulepack: input.rulepack,
+      reference: input.reference,
+      ingredientsByMedicationId: input.ingredientsByMedicationId,
+      classesByMedicationId: input.classesByMedicationId,
+    });
+
+    if (result.status === 'CLEAR') continue;
+
+    collected.push(...result.alerts);
+    for (const name of result.uncheckable) uncheckable.add(name);
+    for (const check of result.suppressedChecks)
+      suppressed.set(check.stage, check);
+  }
+
+  const deduped = dedupeAlerts(collected);
+
+  if (uncheckable.size > 0 || suppressed.size > 0) {
+    return {
+      status: 'INCOMPLETE',
+      uncheckable: [...uncheckable],
+      alerts: deduped,
+      suppressedChecks: [...suppressed.values()],
+    };
+  }
+  if (deduped.length > 0) {
+    return {
+      status: 'ALERTS',
+      alerts: deduped,
+      uncheckable: [],
+      suppressedChecks: [],
+    };
+  }
+  return { status: 'CLEAR' };
+}
+
+/**
+ * Collapse alerts that describe the same finding from either direction.
+ *
+ * The key is the alert kind, the SORTED set of involved medication ids, and
+ * whatever discriminator the alert id carries beyond those ids (an ingredient
+ * code, a condition/class pair). Sorting the ids is what makes "A duplicates B"
+ * and "B duplicates A" the same finding.
+ */
+function dedupeAlerts(alerts: Alert[]): Alert[] {
+  const seen = new Map<string, Alert>();
+
+  for (const alert of alerts) {
+    const drugIds = alert.involvedDrugs.map((d) => d.id);
+    const discriminator = alert.id
+      .split(':')
+      .filter((part) => part !== alert.kind && !drugIds.includes(part))
+      .join(':');
+    const key = `${alert.kind}:${[...drugIds].sort().join('|')}:${discriminator}`;
+
+    if (!seen.has(key)) seen.set(key, alert);
+  }
+
+  return sortAlerts([...seen.values()]);
+}

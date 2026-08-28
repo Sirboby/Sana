@@ -214,3 +214,35 @@ export function createEntityRepository<
     },
   };
 }
+
+/**
+ * Commit SEVERAL entity writes and their outbox entries in ONE transaction.
+ *
+ * Step 10 requires every medication mutation to append a `clinical_events` row
+ * alongside the entity write. That is two entity rows and two outbox entries,
+ * and all four have to land together: a medication saved without its event
+ * leaves a gap in the timeline, and an event without its medication describes
+ * something that does not exist.
+ *
+ * Same ordering rule as `commitWrite` — every argument is fully prepared and
+ * encrypted before this is called, so the transaction contains only Dexie
+ * operations and cannot be taken out of Dexie's async zone.
+ */
+export async function commitWrites(
+  writes: {
+    tableName: MutationTable;
+    storedRow: Record<string, unknown>;
+    outboxEntry: OutboxEntry;
+  }[],
+): Promise<void> {
+  const tables = [...new Set(writes.map((w) => w.tableName))].map((name) =>
+    db.table(name),
+  );
+
+  await db.transaction('rw', [...tables, db.outbox], async () => {
+    for (const write of writes) {
+      await db.table(write.tableName).put(write.storedRow);
+      await db.outbox.add(write.outboxEntry);
+    }
+  });
+}
